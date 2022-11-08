@@ -71,7 +71,7 @@ $custom-btn-dark-color: #fff;
     background-color: $bg-alt-color;
   }
 
-  a.docs-link, .btn-toggle[aria-expanded="true"], .alert-doks, .offcanvas a.nav-link, a.navbar-brand > span {
+  a.docs-link, .btn-toggle[aria-expanded="true"], .alert-doks, .offcanvas a.nav-link, a.navbar-brand > span, .dropdown-item {
     color: $color;
   }
 
@@ -87,7 +87,7 @@ $custom-btn-dark-color: #fff;
   }
 
   a:not(.btn):not(.nav-link):not(.navbar-brand) {
-    &:not(.docs-link){
+    &:not(.docs-link):not(.dropdown-item){
       color: $primary !important;
     }
     &:hover, &:active, &:focus {
