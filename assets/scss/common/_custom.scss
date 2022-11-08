@@ -4,8 +4,114 @@
 $custom-primary-color: #ff4935;
 $custom-primary-color-active: #e73c29;
 
-$custom-color: --bs-body-color;
-$custom-dark-color: --bs-gray-300;
+$custom-primary-dark-color: #ff4935;
+$custom-primary-dark-color-active: #e73c29;
+
+$custom-color: #1d2d35;
+$custom-color-muted: #6c757d;
+$custom-bg-color: #fff;
+$custom-bg-alt-color: #fbf7f0;
+$custom-bg-input-color: #f8f9fa;
+
+$custom-dark-color: #dee2e6;
+$custom-color-dark-muted: #c8cfd6;
+$custom-bg-dark-color: #212529;
+$custom-bg-alt-dark-color: #1b1f22;
+$custom-bg-input-dark-color: #1b1f22;
+
+$custom-btn-color: #fff;
+$custom-btn-dark-color: #fff;
+
+//
+// Mixin
+//
+@mixin custom-colors($color, $color-muted, $bg-color, $bg-alt-color, $bg-input-color, $primary, $primary-active, $btn-color) {
+  color: $color !important;
+  background-color: $bg-color !important;
+
+  .text-muted {
+    color: $color-muted !important;
+  }
+
+  input.form-control {
+    background-color: $bg-input-color !important;
+    &:focus {
+      border-color: $primary !important;
+    }
+    &, &::placeholder {
+      color: $color !important;
+    }
+  }
+
+  .doks-search::after {
+    color: $color;
+    border-color: $color;
+  }
+
+  .active {
+    color: $primary !important;
+  }
+
+  & #TableOfContents ul li a {
+    color: $color !important;
+    &:hover {
+      color: $primary !important;
+    }
+  }
+
+  .btn, .btn-link, #mode {
+    color: $color;
+    &:hover, &:active, &:focus {
+      color: $primary;
+    }
+  }
+
+  .hljs, code:not(.hljs), .alert-doks {
+    color: $color;
+    background-color: $bg-alt-color;
+  }
+
+  a.docs-link, .btn-toggle[aria-expanded="true"], .alert-doks, .offcanvas a.nav-link, a.navbar-brand > span {
+    color: $color;
+  }
+
+  .btn-primary, .btn-copy {
+    background-color: $primary;
+    border-color: $primary;
+    color: $btn-color !important;
+    &:hover, &:active, &:focus  {
+      background-color: $primary-active;
+      border-color: $primary-active;
+      color: $btn-color!important;
+    }
+  }
+
+  a:not(.btn):not(.nav-link):not(.navbar-brand) {
+    &:not(.docs-link){
+      color: $primary !important;
+    }
+    &:hover, &:active, &:focus {
+      color: $primary !important;
+    }
+  }
+
+  .btn-link {
+    &:hover, &:active, &:focus {
+      color: $primary-active !important;
+    }
+  }
+
+  .navbar {
+    &, & .offcanvas {
+      background-color: $bg-color;
+    }
+  }
+  .nav-link, a.navbar-brand > span {
+    &:hover, &:active, &:focus {
+      color: $primary !important;
+    }
+  }
+}
 
 
 //
@@ -23,64 +129,28 @@ $custom-dark-color: --bs-gray-300;
 }
 
 [data-dark-mode] body {
-  color: $custom-dark-color !important;
+  @include custom-colors(
+    $custom-dark-color,
+    $custom-color-dark-muted,
+    $custom-bg-dark-color,
+    $custom-bg-alt-dark-color,
+    $custom-bg-input-dark-color,
+    $custom-primary-dark-color,
+    $custom-primary-dark-color-active,
+    $custom-btn-dark-color
+  )
 }
 
 body {
-  color: $custom-color !important;
-}
-
-input:focus {
-  border-color: #e73c29 !important;
-}
-
-.active {
-  color: #ff4935 !important;
-}
-
-.btn-primary, [data-dark-mode] body .btn-primary {
-  background-color: #ff4935 !important;
-  border-color: #ff4935 !important;
-  color: #fff !important;
-  &:hover {
-    background-color: #e73c29 !important;
-    border-color: #e73c29 !important;
-    color: #fff !important;
-  }
-}
-
-.nav-link, a.navbar-brand {
-  &:hover, &:active, &:focus {
-    color: #ff4935 !important;
-  }
-}
-
-[data-dark-mode] body #TableOfContents a {
-  color: #dee2e6 !important;
-  &:hover {
-    color: #ff4935 !important;
-  }
-}
-body #TableOfContents a {
-  color: #1d2d35 !important;
-  &:hover {
-    color: #ff4935 !important;
-  }
-}
-
-
-a:not(.btn):not(.nav-link):not(.navbar-brand) {
-  &:not(.docs-link){
-    color: #ff4935 !important;
-  }
-  &:hover, &:active, &:focus {
-    color: #e73c29 !important;
-  }
-}
-
-.btn-link {
-  &:hover, &:active, &:focus {
-    color: #e73c29 !important;
-  }
+  @include custom-colors(
+    $custom-color,
+    $custom-color-muted,
+    $custom-bg-color,
+    $custom-bg-alt-color,
+    $custom-bg-input-color,
+    $custom-primary-color,
+    $custom-primary-color-active,
+    $custom-btn-color
+  )
 }
 
