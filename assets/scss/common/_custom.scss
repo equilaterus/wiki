@@ -178,8 +178,7 @@ $custom-btn-dark-color: #fff;
   }
 }
 
-::selection,
-::-moz-selection {
+::selection {
   background: $custom-primary-color;
   color: $custom-btn-color;
 }
