@@ -1,1 +1,86 @@
-/** Custom styles */
+//
+// Variables
+//
+$custom-primary-color: #ff4935;
+$custom-primary-color-active: #e73c29;
+
+$custom-color: --bs-body-color;
+$custom-dark-color: --bs-gray-300;
+
+
+//
+// Styles
+//
+.navbar-brand {
+  position: relative;
+  & > img {
+    position: absolute;
+    max-height: 35px !important;
+  }
+  & > span {
+    padding-left: 45px;
+  }
+}
+
+[data-dark-mode] body {
+  color: $custom-dark-color !important;
+}
+
+body {
+  color: $custom-color !important;
+}
+
+input:focus {
+  border-color: #e73c29 !important;
+}
+
+.active {
+  color: #ff4935 !important;
+}
+
+.btn-primary, [data-dark-mode] body .btn-primary {
+  background-color: #ff4935 !important;
+  border-color: #ff4935 !important;
+  color: #fff !important;
+  &:hover {
+    background-color: #e73c29 !important;
+    border-color: #e73c29 !important;
+    color: #fff !important;
+  }
+}
+
+.nav-link, a.navbar-brand {
+  &:hover, &:active, &:focus {
+    color: #ff4935 !important;
+  }
+}
+
+[data-dark-mode] body #TableOfContents a {
+  color: #dee2e6 !important;
+  &:hover {
+    color: #ff4935 !important;
+  }
+}
+body #TableOfContents a {
+  color: #1d2d35 !important;
+  &:hover {
+    color: #ff4935 !important;
+  }
+}
+
+
+a:not(.btn):not(.nav-link):not(.navbar-brand) {
+  &:not(.docs-link){
+    color: #ff4935 !important;
+  }
+  &:hover, &:active, &:focus {
+    color: #e73c29 !important;
+  }
+}
+
+.btn-link {
+  &:hover, &:active, &:focus {
+    color: #e73c29 !important;
+  }
+}
+
