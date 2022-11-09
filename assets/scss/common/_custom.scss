@@ -10,7 +10,7 @@ $custom-primary-dark-color-active: #e73c29;
 $custom-color: #1d2d35;
 $custom-color-muted: #6c757d;
 $custom-bg-color: #fff;
-$custom-bg-alt-color: #fbf7f0;
+$custom-bg-alt-color: #f9f9f9;
 $custom-bg-input-color: #f8f9fa;
 $custom-border-color: #e9ecef;
 
@@ -93,8 +93,6 @@ $custom-btn-dark-color: #fff;
     }
   }
 
-  .hljs,
-  code:not(.hljs),
   .alert-doks {
     color: $color;
     background-color: $bg-alt-color;
@@ -159,6 +157,11 @@ $custom-btn-dark-color: #fff;
     &:focus {
       color: $primary !important;
     }
+  }
+
+  .hljs,
+  code:not(.hljs) {
+    background-color: $bg-alt-color;
   }
 }
 
