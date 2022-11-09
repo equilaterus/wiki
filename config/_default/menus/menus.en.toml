@@ -1,8 +1,14 @@
 [[docs]]
-  name = "Prologue"
+  name = "Start"
+  weight = 1
+  identifier = "Start"
+  url = "/docs/start/"
+
+[[docs]]
+  name = "Programming"
   weight = 10
-  identifier = "prologue"
-  url = "/docs/prologue/"
+  identifier = "programming"
+  url = "/docs/programming/"
 
 [[docs]]
   name = "Help"
@@ -30,7 +36,7 @@
 
 [[main]]
   name = "Docs"
-  url = "/docs/prologue/introduction/"
+  url = "/docs/start/introduction/"
 # url = "/docs/1.0/prologue/introduction/"
   weight = 10
 
@@ -43,26 +49,6 @@
   name = "Blog"
   url = "/blog/"
   weight = 20
-
-[[main]]
-  name = "Get Started"
-  weight = 30
-  identifier = "get-started"
-  url = "/docs/prologue/introduction/"
-
-[[main]]
-  name = "Quick Start"
-  weight = 40
-  identifier = "quick-start"
-  url = "/docs/prologue/quick-start/"
-  parent = "get-started"
-
-[[main]]
-  name = "Tutorial"
-  weight = 50
-  identifier = "tutorial"
-  url = "https://getdoks.org/tutorial/introduction/"
-  parent = "get-started"
 
 [[social]]
   name = "GitHub"
