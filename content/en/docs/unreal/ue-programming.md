@@ -17,6 +17,7 @@ toc: true
 
 We have a project setup [right here on GitHub](https://github.com/equilaterus-gamestudios/ue4-gitlfs-baseproject).
 
+
 ## UE C++
 
 Crash course: [Converting Blueprints to C++](https://www.unrealengine.com/en-US/onlinelearning-courses/converting-blueprints-to-c).
@@ -28,6 +29,7 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
   * BLUEPRINT IMPLEMENTABLE EVENT
   * BLUEPRINT NATIVE EVENT
 * [DELEGATES](https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Delegates/index.html)
+
 
 ### Common includes
 
@@ -43,7 +45,7 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
 |FMath                |Math/UnrealMathUtility.h    |
 |UPhysicsHandleComponent | PhysicsEngine/PhysicsHandleComponent.h |
 
-* (*) KismetMath is usually a wrapper to FMath. Review implementation and try to call directly FMath.
+* (*) KismetMath is usually a wrapper to FMath.
 
 ### Mapping types
 
@@ -110,18 +112,18 @@ Sample UE C++ Struct (note F prefix):
 USTRUCT(BlueprintType)
 struct FMyStruct
 {
-	GENERATED_BODY()
+  GENERATED_BODY()
 
-	UPROPERTY(BlueprintReadOnly)
-        AActor* Character;
+  UPROPERTY(BlueprintReadOnly)
+  AActor* Character;
 
-	FMyStruct();
+  FMyStruct();
 };
 
 // MyStruct.cpp
 FMyStruct::FMyStruct()
 {
-	Character = nullptr;
+  Character = nullptr;
 }
 
 ```
@@ -161,7 +163,7 @@ Sample interface:
 UINTERFACE()
 class UMyInterface : public UInterface
 {
-	GENERATED_BODY()
+  GENERATED_BODY()
 };
 
 /**
@@ -169,13 +171,12 @@ class UMyInterface : public UInterface
  */
 class YOURPROJECT_API IMyInterface
 {
-	GENERATED_BODY()
+  GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintNativeEvent)
-	void YourMethod();
+  UFUNCTION(BlueprintNativeEvent)
+  void YourMethod();
 };
-
 ```
 
 To use it:
@@ -185,16 +186,16 @@ To use it:
 UCLASS()
 class YOURPROJECT_API AMyCharacter : public AActor, public IMyInterface
 {
-    GENERATED_BODY()
+  GENERATED_BODY()
 public:
-    virtual void YourMethod_Implementation() override;
+  virtual void YourMethod_Implementation() override;
 }
 
 
 // To use the interface from another function
 if (AnActor->Implements<UMyInterface>())
 {
-    IOHActionEntity::Execute_YourMethod(AnActor);
+  IOHActionEntity::Execute_YourMethod(AnActor);
 }
 ````
 
@@ -240,7 +241,7 @@ FVector UClass::GetMaxGrabLocation() const
 {
         // GetComponentLocation or GetLocation depending if you're on an Actor or Component
         // same with Rotation
-	return GetComponentLocation() + GetComponentRotation().Vector() * MaxDistance;
+  return GetComponentLocation() + GetComponentRotation().Vector() * MaxDistance;
 }
 ```
 
@@ -340,13 +341,13 @@ if (UKismetSystemLibrary::SphereTraceMulti(this, CameraComponent->GetComponentLo
 UCLASS()
 class YOURPROJECT_API UCharacterAnimInstance : public UAnimInstance
 {
-	GENERATED_BODY()
+  GENERATED_BODY()
 
 public:
-	UCharacterAnimInstance();
+  UCharacterAnimInstance();
 
-	UPROPERTY(EditDefaultsOnly)
-	float MinWalkSpeed;
+  UPROPERTY(EditDefaultsOnly)
+  float MinWalkSpeed;
 }
 ```
 
@@ -356,13 +357,13 @@ public:
 UCLASS()
 class YOURPROJECT_API UCharacterAnimInstance : public UPixel2DAnimInstance
 {
-	GENERATED_BODY()
+  GENERATED_BODY()
 
 public:
-	UCharacterAnimInstance();
+  UCharacterAnimInstance();
 
-	UPROPERTY(EditDefaultsOnly)
-	float MinWalkSpeed;
+  UPROPERTY(EditDefaultsOnly)
+  float MinWalkSpeed;
 }
 ```
 
@@ -374,16 +375,16 @@ class CLASS_API AMyClass : public AActor
 {
 ....
 private:
-	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	UBoxComponent* BoxCollider;
+  UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+  UBoxComponent* BoxCollider;
 protected:
-        virtual void BeginPlay() override;
+  virtual void BeginPlay() override;
 public:
-        UFUNCTION()
-        void BeginOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+  UFUNCTION()
+  void BeginOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 
-	UFUNCTION()
-        void EndOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+  UFUNCTION()
+  void EndOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 ...
 }
@@ -391,39 +392,39 @@ public:
 // .cpp
 AMyClass::AMyClass()
 {
-	BoxCollider= CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollider"));
-	BoxCollider->SetCollisionProfileName(TEXT("Custom"));
-	// TODO: Set channel (if nedeed): BoxCollision->SetCollisionObjectType(ECC_Visibility);
-        // TODO: Set size:
-	BoxCollider->SetBoxExtent(FVector(10, 10, 10));
-	BoxCollider->SetRelativeTransform(FTransform(FRotator::ZeroRotator, FVector(0, 0, 10), FVector(1, 1, 1)));
-        // TODO: Customize collision config
-	BoxCollider->SetCollisionResponseToAllChannels(ECR_Ignore);
-	BoxCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	BoxCollider->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
-	BoxCollider->SetCollisionResponseToChannel(ECC_Visibility, ECR_Overlap);
-	BoxCollider->SetGenerateOverlapEvents(true);
-	BoxCollider->SetupAttachment(RootComponent);
+  BoxCollider= CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollider"));
+  BoxCollider->SetCollisionProfileName(TEXT("Custom"));
+  // TODO: Set channel (if nedeed): BoxCollision->SetCollisionObjectType(ECC_Visibility);
+  // TODO: Set size:
+  BoxCollider->SetBoxExtent(FVector(10, 10, 10));
+  BoxCollider->SetRelativeTransform(FTransform(FRotator::ZeroRotator, FVector(0, 0, 10), FVector(1, 1, 1)));
+  // TODO: Customize collision config
+  BoxCollider->SetCollisionResponseToAllChannels(ECR_Ignore);
+  BoxCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+  BoxCollider->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+  BoxCollider->SetCollisionResponseToChannel(ECC_Visibility, ECR_Overlap);
+  BoxCollider->SetGenerateOverlapEvents(true);
+  BoxCollider->SetupAttachment(RootComponent);
 }
 
 void AMyClass::BeginPlay()
 {
-	Super::BeginPlay();
+  Super::BeginPlay();
 
-	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &AMyClass::BeginOverlapBoxCollider);
-	BoxCollider->OnComponentEndOverlap.AddDynamic(this, &AMyClass::EndOverlapBoxCollider);
+  BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &AMyClass::BeginOverlapBoxCollider);
+  BoxCollider->OnComponentEndOverlap.AddDynamic(this, &AMyClass::EndOverlapBoxCollider);
 }
 
 void AMyClass::BeginOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	// YOUR CODE GOES HERE
+  // YOUR CODE GOES HERE
 }
 
 void AMyClass::EndOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	// YOUR CODE GOES HERE
+  // YOUR CODE GOES HERE
 }
 
 ```
@@ -437,9 +438,9 @@ class CLASS_API AMyClass : public AActor
 ....
 private:
 #if WITH_EDITORONLY_DATA
-	/** Editor Billboard */
-	UPROPERTY()
-	UBillboardComponent* BillboardComponent;
+  /** Editor Billboard */
+  UPROPERTY()
+  UBillboardComponent* BillboardComponent;
 #endif
 ....
 
@@ -454,11 +455,11 @@ AMyClass::AMyClass()
   BillboardComponent = CreateEditorOnlyDefaultSubobject<UBillboardComponent>(TEXT("Sprite"));
   if (BillboardComponent)
   {
-	BillboardComponent->SetWorldTransform(
-		FTransform(FRotator::ZeroRotator, FVector::ZeroVector, FVector::OneVector * 4)
-	);
-	BillboardComponent->Sprite = ConstructorHelpers::FObjectFinderOptional<UTexture2D>(TEXT("/PATH/TO-TEXTURE")).Get();
-		BillboardComponent->SetupAttachment(RootComponent);
+  BillboardComponent->SetWorldTransform(
+    FTransform(FRotator::ZeroRotator, FVector::ZeroVector, FVector::OneVector * 4)
+  );
+  BillboardComponent->Sprite = ConstructorHelpers::FObjectFinderOptional<UTexture2D>(TEXT("/PATH/TO-TEXTURE")).Get();
+    BillboardComponent->SetupAttachment(RootComponent);
   }
   #endif
 }
@@ -564,4 +565,3 @@ Improved and updated code to seek for a Random Reachable Location in the Navmesh
 * **Convert Mouse Location to World Space**: Interact with 3D objects using players' mouse.
   [See video](https://www.youtube.com/watch?v=b1_efR9hrT4)
 * **Reducing Packaged Game Size**: [See here](https://docs.unrealengine.com/en-US/Engine/Performance/ReducingPackageSize/index.html)
-
