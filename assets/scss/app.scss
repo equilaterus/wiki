@@ -11,6 +11,7 @@
 body {
   @import "highlight.js/scss/vs";
 }
+
 [data-dark-mode] body {
   @import "highlight.js/scss/vs2015";
 }
