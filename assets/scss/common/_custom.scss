@@ -112,6 +112,18 @@ $custom-btn-dark-color: #fff;
     color: $color;
   }
 
+  .btn-outline-primary {
+    color: $btn-color !important;
+    border-color: $btn-bg-color;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $btn-bg-active-color;
+      border-color: $btn-bg-active-color;
+      color: $btn-color !important;
+    }
+  }
+
   .btn-primary,
   .btn-copy {
     background-color: $btn-bg-color;
