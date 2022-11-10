@@ -1,7 +1,7 @@
 ---
 title: "UE Linux"
-description: "Doks comes with commands for common tasks."
-lead: "Doks comes with commands for common tasks."
+description: "Unreal Development on Linux"
+lead: "Unreal Development on Linux"
 date: 2020-10-13T15:21:01+02:00
 lastmod: 2020-10-13T15:21:01+02:00
 draft: false
@@ -13,100 +13,43 @@ weight: 10
 toc: true
 ---
 
-{{< alert icon="💡" text="You can change the commands in the scripts section of `./package.json`." />}}
+* Official binaries: [Download page](https://www.unrealengine.com/en-US/linux)
+* Recommended IDE: [Rider Linux](https://www.jetbrains.com/rider/download/#section=linux).
+* Recommended Git App: [Github Desktop for Linux](https://github.com/shiftkey/desktop).
+* PlasticSCM: [Linux packages](https://www.plasticscm.com/plastic-for-linux)
 
-## create
+## Recommended config
 
-Create new content for your site:
+* Build max parallel actions: [See UE Programming section]({{< relref "ue-programming#build-max-parallel-actions" >}})
 
-```bash
-npm run create [path] [flags]
-```
+* If you're using PlasticSCM: [Equilaterus PlasticSCM+GitHub](https://github.com/equilaterus-gamestudios/PlasticSCM-GitHub-extension)
 
-See also the Hugo docs: [hugo new](https://gohugo.io/commands/hugo_new/).
+## Compile your own binaries
 
-### Docs based tree
+To compile and generate your own binaries:
 
-Create a docs based tree — with a single command:
+1. Clone.
+2. Setup.
+3. Generate files (DO NOT MAKE).
 
-```bash
-npm run create -- --kind docs [section]
-```
+4. Goto **Engine/Build/BatchFiles/**
 
-For example, create a docs based tree named guides:
+   ```sh
+   /RunUAT.sh BuildGraph -target="Make Installed Build Linux" -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations="Development;Shipping"
+   ```
 
-```bash
-npm run create -- --kind docs guides
-```
+   *If there are errors with dependencies*: Copy **Engine/Binaries/DotNET** (from source folders) to your compiled **LocalBuilds/Engine/Linux/Engine/Binaries/DotNET** ( folder). Rerun previous command.
 
-## lint
+6. Copy results from **LocalBuilds/Engine/Linux** folder to any other location.
 
-Check scripts, styles, and markdown for errors:
+7. Create or open a project with **{OtherLocation}/Engine/Binaries/Linux/UnrealEditor**. After opening it, you can use Rider or your IDE to modify it.
 
-```bash
-npm run lint
-```
+Common errors:
 
-### scripts
+* Dependencies errors:
+  * [Blog birost](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
+  * [Unreal forum](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
 
-Check scripts for errors:
-
-```bash
-npm run lint:scripts [-- --fix]
-```
-
-### styles
-
-Check styles for errors:
-
-```bash
-npm run lint:styles [-- --fix]
-```
-
-### markdown
-
-Check markdown for errors:
-
-```bash
-npm run lint:markdown [-- --fix]
-```
-
-## clean
-
-Delete temporary directories:
-
-```bash
-npm run clean
-```
-
-## start
-
-Start local development server:
-
-```bash
-npm run start
-```
-
-## build
-
-Build production website:
-
-```bash
-npm run build
-```
-
-### functions
-
-Build Lambda functions:
-
-```bash
-npm run build:functions
-```
-
-### preview
-
-Build production website including draft and future content:
-
-```bash
-npm run build:preview
-```
+Other options:
+* [Unreal containers installed build](https://unrealcontainers.com/docs/use-cases/linux-installed-builds)
+* See Unreal Slackers on discord.
