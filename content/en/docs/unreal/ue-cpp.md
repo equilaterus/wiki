@@ -91,9 +91,7 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
 
 * Recommended IDE: [Rider for UE](https://www.jetbrains.com/es-es/lp/rider-unreal/).
 * Recommended Git App: [Github Desktop](https://desktop.github.com/).
-* Recommended free Repos with Git LFS: [Azure Repos](https://azure.microsoft.com/en-us/services/devops/repos/)
-
-To clone your Azure repos with Github Desktop follow [this guide](https://github.com/desktop/desktop/blob/development/docs/integrations/azure-devops.md).
+* PlasticSCM.
 
 ## Examples
 
