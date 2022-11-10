@@ -1,16 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unreal on</title><link>https://equilaterus.com/wiki/docs/unreal/</link><description>Recent content in Unreal on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/unreal/index.xml" rel="self" type="application/rss+xml"/><item><title>UE Linux</title><link>https://equilaterus.com/wiki/docs/unreal/ue-linux/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-linux/</guid><description>💡 You can change the commands in the scripts section of `./package.json`. create #
-Create new content for your site:
-npm run create [path] [flags] See also the Hugo docs: hugo new.
-Docs based tree #
-Create a docs based tree — with a single command:
-npm run create -- --kind docs [section] For example, create a docs based tree named guides:
-npm run create -- --kind docs guides lint #
-Check scripts, styles, and markdown for errors:</description></item><item><title>UE Content creation</title><link>https://equilaterus.com/wiki/docs/unreal/ue-content-creation/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-content-creation/</guid><description>Static Meshes #
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unreal on</title><link>https://equilaterus.com/wiki/docs/unreal/</link><description>Recent content in Unreal on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/unreal/index.xml" rel="self" type="application/rss+xml"/><item><title>UE Linux</title><link>https://equilaterus.com/wiki/docs/unreal/ue-linux/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-linux/</guid><description>Official binaries: Download page Recommended IDE: Rider Linux. Recommended Git App: Github Desktop for Linux. PlasticSCM: Linux packages Recommended config #
+Build max parallel actions: See UE Programming section
+If you&amp;rsquo;re using PlasticSCM: Equilaterus PlasticSCM+GitHub
+Compile your own binaries #
+To compile and generate your own binaries:
+Clone.
+Setup.
+Generate files (DO NOT MAKE).
+Goto Engine/Build/BatchFiles/
+/RunUAT.sh BuildGraph -target=&amp;quot;Make Installed Build Linux&amp;quot; -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations=&amp;quot;Development;Shipping&amp;quot; If there are errors with dependencies: Copy Engine/Binaries/DotNET (from source folders) to your compiled LocalBuilds/Engine/Linux/Engine/Binaries/DotNET ( folder).</description></item><item><title>UE Content creation</title><link>https://equilaterus.com/wiki/docs/unreal/ue-content-creation/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-content-creation/</guid><description>Static Meshes #
 Naming: #
 Create meshes using CamelCase. Export the whole object as SM_CamelCaseName. Name textures T_CamelCaseName_SUFFIX, replacing SUFFIX with: _D: Diffuse/Color Map _N: Normal Map _E: Emissive Map _M: Mask Map _R: Roughness Map _MT: Metallic Map _S: Specular _DP: Displacement _AO: Ambient Occlusion _H: Height Map _F: Flow Map More info: Naming Convention Complete list: Here Collisions: #
-Add a custom convex mesh with the name UCX_MeshName, where MeshName is the exact name of the mesh that will have a collision.</description></item><item><title>UE Programming</title><link>https://equilaterus.com/wiki/docs/unreal/ue-programming/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-programming/</guid><description>UE and Git-LFS #
-We have a project setup right here on GitHub.
-UE C++ #
+Add a custom convex mesh with the name UCX_MeshName, where MeshName is the exact name of the mesh that will have a collision.</description></item><item><title>UE Programming</title><link>https://equilaterus.com/wiki/docs/unreal/ue-programming/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-programming/</guid><description>Source control #
+Working with big assets can be challenging, here are some options:
+Git Plugin. GitHub LFS is not free. PlasticSCM. Includes free plan. Helix Perforce. Build max parallel actions #
+Modify or create:
+Linux: $HOME/.config//Unreal Engine/UnrealBuildTool/BuildConfiguration.xml Windows: mydocuments\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml BuildConfiguration.xml contents:
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; ?&amp;gt; &amp;lt;Configuration xmlns=&amp;quot;https://www.unrealengine.com/BuildConfiguration&amp;quot;&amp;gt; &amp;lt;BuildConfiguration&amp;gt; &amp;lt;ProcessorCountMultiplier&amp;gt;2&amp;lt;/ProcessorCountMultiplier&amp;gt; &amp;lt;MaxProcessorCount&amp;gt;30&amp;lt;/MaxProcessorCount&amp;gt; &amp;lt;/BuildConfiguration&amp;gt; &amp;lt;/Configuration&amp;gt; In the previous example, by setting ProcessorCountMultiplier to 2, results in the compiler using all 32 hardware threads of the 16 physical core Threadripper 1950X processor.</description></item><item><title>UE C++</title><link>https://equilaterus.com/wiki/docs/unreal/ue-cpp/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-cpp/</guid><description>General information #
 Crash course: Converting Blueprints to C++. Documentation: Gameplay Architecture.
 UPROPERTY UFUNCTION BLUEPRINT PURE / CALLABLE BLUEPRINT IMPLEMENTABLE EVENT BLUEPRINT NATIVE EVENT DELEGATES Common includes #
 Class #include UWorld Engine/World.h AActor GameFramework/Actor.h UActorComponent Components/ActorComponent.h USceneComponent Components/SceneComponent.h UGameplayStatics Engine/World.h UKismetSystemLibrary Kismet/GameplayStatics.h UKismetMathLibrary* Kismet/KismetMathLibrary.h FMath Math/UnrealMathUtility.h UPhysicsHandleComponent PhysicsEngine/PhysicsHandleComponent.h (*) KismetMath is usually a wrapper to FMath. Mapping types #
