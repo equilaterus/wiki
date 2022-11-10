@@ -1,11 +1,14 @@
 //
 // Variables
 //
-$custom-primary-color: #ff4935;
-$custom-primary-color-active: #e73c29;
+$custom-primary-color: #4a4cc0;
+$custom-primary-color-active: #374c9f;
 
-$custom-primary-dark-color: #ff4935;
-$custom-primary-dark-color-active: #e73c29;
+$custom-primary-dark-color: #8ed6fb;
+$custom-primary-dark-color-active: #8ed6fb;
+
+$custom-btn-bg-color: #ff4935;
+$custom-btn-bg-active-color: #e73c29;
 
 $custom-color: #1d2d35;
 $custom-color-muted: #6c757d;
@@ -35,6 +38,8 @@ $custom-btn-dark-color: #fff;
   $bg-input-color,
   $primary,
   $primary-active,
+  $btn-bg-color,
+  $btn-bg-active-color,
   $btn-color,
   $border-color
 ) {
@@ -109,15 +114,15 @@ $custom-btn-dark-color: #fff;
 
   .btn-primary,
   .btn-copy {
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $btn-bg-color;
+    border-color: $btn-bg-color;
     color: $btn-color !important;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: $primary-active;
-      border-color: $primary-active;
+      background-color: $btn-bg-active-color;
+      border-color: $btn-bg-active-color;
       color: $btn-color !important;
     }
   }
@@ -195,6 +200,8 @@ body {
     $custom-bg-input-color,
     $custom-primary-color,
     $custom-primary-color-active,
+    $custom-btn-bg-color,
+    $custom-btn-bg-active-color,
     $custom-btn-color,
     $custom-border-color
   );
@@ -209,6 +216,8 @@ body {
     $custom-bg-input-dark-color,
     $custom-primary-dark-color,
     $custom-primary-dark-color-active,
+    $custom-btn-bg-color,
+    $custom-btn-bg-active-color,
     $custom-btn-dark-color,
     $custom-border-dark-color
   );
