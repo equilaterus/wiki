@@ -166,9 +166,7 @@ class UMyInterface : public UInterface
   GENERATED_BODY()
 };
 
-/**
- *
- */
+// Your interface
 class YOURPROJECT_API IMyInterface
 {
   GENERATED_BODY()
@@ -197,7 +195,7 @@ if (AnActor->Implements<UMyInterface>())
 {
   IOHActionEntity::Execute_YourMethod(AnActor);
 }
-````
+```
 
 More info [here](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/GameplayArchitecture/Interfaces/index.html).
 
@@ -205,16 +203,16 @@ More info [here](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Gam
 ### Delegate samples
 
 ```cpp
-/* DECLARATION */
+// Declaration
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCompletedQuestSignature, int32, index)
 
 UPROPERTY(BlueprintAssignable, BlueprintCallable)
 FCompletedQuestSignature CompletedQuest;
 
-/* BROADCAST */
+// Broadcast
 CompletedQuest.Broadcast(parameter);
 
-/* SUBSCRIBE */
+// Subscribe
 UFUNCTION() // Required for dynamic
 void FunctionHandler(int32 index)
 
@@ -239,8 +237,8 @@ Calculate vector of size *MaxDistance* starting at actor/component location on t
 ```cpp
 FVector UClass::GetMaxGrabLocation() const
 {
-        // GetComponentLocation or GetLocation depending if you're on an Actor or Component
-        // same with Rotation
+  // GetComponentLocation or GetLocation depending if you're on an Actor or Component
+  // same with Rotation
   return GetComponentLocation() + GetComponentRotation().Vector() * MaxDistance;
 }
 ```
@@ -308,7 +306,7 @@ if (UKismetSystemLibrary::SphereTraceMulti(this, CameraComponent->GetComponentLo
 {
     // Handle hit(s)!
 }
-````
+```
 
 ### Anim notifiers C++
 
@@ -438,7 +436,7 @@ class CLASS_API AMyClass : public AActor
 ....
 private:
 #if WITH_EDITORONLY_DATA
-  /** Editor Billboard */
+  // Editor Billboard
   UPROPERTY()
   UBillboardComponent* BillboardComponent;
 #endif
