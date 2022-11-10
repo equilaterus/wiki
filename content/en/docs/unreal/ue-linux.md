@@ -18,6 +18,17 @@ toc: true
 * Recommended Git App: [Github Desktop for Linux](https://github.com/shiftkey/desktop).
 * PlasticSCM: [Linux packages](https://www.plasticscm.com/plastic-for-linux)
 
+## Instructions
+
+* Extract Unreal Engine on any location, for example:
+  ```
+  $HOME/Unreal/VERSION/
+  ```
+
+* Inside the extracted folder **Engine/Binaries/Linux** and execute file: **UnrealEditor**.
+
+* Open or create a project. After that, you can open it up on your Rider (or your IDE) and compile it as usual.
+
 ## Recommended config
 
 * Build max parallel actions: [See UE Programming section]({{< relref "ue-programming#build-max-parallel-actions" >}})
