@@ -6,6 +6,7 @@ import bash from 'highlight.js/lib/languages/bash';
 import ini from 'highlight.js/lib/languages/ini';
 import yaml from 'highlight.js/lib/languages/yaml';
 import markdown from 'highlight.js/lib/languages/markdown';
+import xml from 'highlight.js/lib/languages/xml';
 import cpp from 'highlight.js/lib/languages/cpp';
 
 
@@ -16,6 +17,7 @@ hljs.registerLanguage('ini', ini);
 hljs.registerLanguage('toml', ini);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('md', markdown);
+hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('cpp', cpp);
 
 document.addEventListener('DOMContentLoaded', () => {
