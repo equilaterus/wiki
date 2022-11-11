@@ -25,7 +25,7 @@ toc: true
   $HOME/Unreal/VERSION/
   ```
 
-* Inside the extracted folder **Engine/Binaries/Linux** and execute file: **UnrealEditor**.
+* Go inside the extracted folder **Engine/Binaries/Linux** and execute file: **UnrealEditor**.
 
 * Open or create a project. After that, you can open it up on your Rider (or your IDE) and compile it as usual.
 
@@ -39,11 +39,21 @@ toc: true
 
 To compile and generate your own binaries:
 
-1. Clone.
+0. Prepare your GitHub account to see the repo: [https://www.unrealengine.com/en-US/ue-on-github]
+1. Clone or download from: [https://github.com/EpicGames/UnrealEngine](GitHub).
 2. Setup.
-3. Generate files (DO NOT MAKE).
 
-4. Goto **Engine/Build/BatchFiles/**
+   ```sh
+   ./Setup.sh
+   ```
+
+3. Generate files (but do not make).
+
+   ```sh
+   ./GenerateProjectFiles.sh
+   ```
+
+4. Go to **Engine/Build/BatchFiles/**
 
    ```sh
    /RunUAT.sh BuildGraph -target="Make Installed Build Linux" -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false -set:GameConfigurations="Development;Shipping"
@@ -58,8 +68,8 @@ To compile and generate your own binaries:
 Common errors:
 
 * Dependencies errors:
-  * [Blog birost](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
-  * [Unreal forum](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
+  * [Blog birost post](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
+  * [Unreal forum thread](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
 
 Other options:
 * [Unreal containers installed build](https://unrealcontainers.com/docs/use-cases/linux-installed-builds)

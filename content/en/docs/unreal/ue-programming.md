@@ -26,7 +26,7 @@ Working with big assets can be challenging, here are some options:
 Modify or create:
   * Linux:
     ```
-    $HOME/.config//Unreal Engine/UnrealBuildTool/BuildConfiguration.xml
+    $HOME/.config/Unreal Engine/UnrealBuildTool/BuildConfiguration.xml
     ```
   * Windows:
     ```
