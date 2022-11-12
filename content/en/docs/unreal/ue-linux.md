@@ -27,7 +27,7 @@ toc: true
 
 * Go inside the extracted folder **Engine/Binaries/Linux** and execute file: **UnrealEditor**.
 
-* Open or create a project. After that, you can open it up on your Rider (or your IDE) and compile it as usual.
+* Open or create a project. After that, you can open it with Rider (or your IDE) and compile it as usual.
 
 ## Recommended config
 
