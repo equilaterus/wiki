@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unreal on</title><link>https://equilaterus.com/wiki/docs/unreal/</link><description>Recent content in Unreal on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/unreal/index.xml" rel="self" type="application/rss+xml"/><item><title>UE Linux</title><link>https://equilaterus.com/wiki/docs/unreal/ue-linux/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-linux/</guid><description>Official binaries: Download page Recommended IDE: Rider Linux. Recommended Git App: Github Desktop for Linux. PlasticSCM: Linux packages Instructions #
 Extract Unreal Engine on any location, for example:
 $HOME/Unreal/VERSION/ Go inside the extracted folder Engine/Binaries/Linux and execute file: UnrealEditor.
-Open or create a project. After that, you can open it up on your Rider (or your IDE) and compile it as usual.
+Open or create a project. After that, you can open it with Rider (or your IDE) and compile it as usual.
 Recommended config #
 Build max parallel actions: See UE Programming section</description></item><item><title>UE Content creation</title><link>https://equilaterus.com/wiki/docs/unreal/ue-content-creation/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/unreal/ue-content-creation/</guid><description>Static Meshes #
 Naming: #
