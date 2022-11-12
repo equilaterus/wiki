@@ -12,7 +12,7 @@ description = "Videogames. Programming. Linux."
 ## Open Graph
 images = [""]
 ogLocale = "en_US"
-domainTLD = "equilaterus.com/wiki"
+domainTLD = "equilaterus.com/wiki/"
 titleHome = "Equilaterus WIKI"
 
 ## Twitter Cards
