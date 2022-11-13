@@ -28,18 +28,23 @@ su -
 usermod -aG sudo username
 ```
 
-### Optimize startup
+### Common configuration
 
 #### Fedora
 
-* systemd-udev-settle:
+* Dolphin video previews:
+  ```
+  sudo dnf install ffmpegthumbs
+  ```
+
+* Optimize startup by masking *systemd-udev-settle*:
 
   ```sh
   sudo systemctl mask systemd-udev-settle
   ```
   [More info](https://www.freedesktop.org/software/systemd/man/systemd-udev-settle.service.html)
 
-* NetworkManager-wait-online.service:
+* Optimize startup by disabling *NetworkManager-wait-online.service*:
 
   ```sh
   sudo systemctl disable NetworkManager-wait-online.service
@@ -258,7 +263,47 @@ sensors
 sudo dnf install xsensors
 ```
 
+### Scanner
+
+Install simple-scan and sane-backends. For example, of Fedora:
+
+```
+sudo dng simple-scan sane-backends
+```
+
+
+### Flatpacks
+
+Enable flatpaks: [Setup instructions](https://flatpak.org/setup/)
+
+```
+# Fedora
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
 ### Other software
+
+Bottles:
+
+```
+# Fedora
+sudo dnf install bottles
+# You may need to install this to fix a dependency issue:
+sudo dnf install gtksourceview5
+
+# Using flatpack
+flatpak install flathub com.usebottles.bottles
+```
+
+Lutris:
+
+```
+# Fedora
+sudo dnf install lutris
+
+# Lutris
+flatpak install flathub net.lutris.Lutris
+```
 
 Dropbox:
 
@@ -270,8 +315,12 @@ flatpak install flathub com.dropbox.Client
 Steam:
 
 ```
+# Fedora
 sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install steam
+
+# Flatpak
+flatpak install flathub com.valvesoftware.Steam
 ```
 
 Telegram:
@@ -280,7 +329,7 @@ Telegram:
 sudo flatpak install flathub org.telegram.desktop
 ```
 
-Flatpacks permissions:
+Flatpacks permissions (Flatseal):
 
 ```
 flatpak install flathub com.github.tchx84.Flatseal
