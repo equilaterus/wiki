@@ -22,7 +22,8 @@ sudo dnf install ffmpegthumbs Optimize startup by masking systemd-udev-settle:
 sudo systemctl mask systemd-udev-settle More info
 Optimize startup by disabling NetworkManager-wait-online.service:
 sudo systemctl disable NetworkManager-wait-online.service More info
-Software #Git #Install instructions Terminal #Install zsh Run command: zsh Install and run Powerlevel10k Set it as your default shell: usermod --shell /usr/bin/zsh root usermod --shell /usr/bin/zsh YOUR_USERNAME To re-run the setup:
+Disable check for update at startup (KDE):
+sudo mv /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart.disabled/org.kde.discover.notifier.desktop Software #Git #Install instructions Terminal #Install zsh Run command: zsh Install and run Powerlevel10k Set it as your default shell: usermod --shell /usr/bin/zsh root usermod --shell /usr/bin/zsh YOUR_USERNAME To re-run the setup:
 p9k_configure VS Code (VSCodium) #Install VSCodium
 Set VSCode/Codium as default editor. more info
 xdg-mime default codium.desktop text/plain # If you're using code instead of codium xdg-mime default code.desktop text/plain GitHub Desktop #Repository.
