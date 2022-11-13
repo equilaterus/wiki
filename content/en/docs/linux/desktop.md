@@ -55,6 +55,12 @@ usermod -aG sudo username
   ```
   [More info](https://askubuntu.com/questions/1018576/what-does-networkmanager-wait-online-service-do)
 
+* Disable check for update at startup (KDE):
+
+  ```sh
+  sudo mv /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart.disabled/org.kde.discover.notifier.desktop
+  ```
+
 
 ## Software
 
