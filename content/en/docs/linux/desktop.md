@@ -1,5 +1,5 @@
 ---
-title: "Linux Desktop"
+title: "Desktop Configuration"
 description: "Configure your Linux desktop environment."
 lead: "Configure your Linux desktop environment."
 date: 2020-10-13T15:21:01+02:00
@@ -13,9 +13,13 @@ weight: 130
 toc: true
 ---
 
-{{< alert icon="💡" text="You can change the commands in the scripts section of `./package.json`." />}}
+{{< alert icon="💡" text="We have some scripts to automate the configuration of your Linux environment." />}}
 
-These instructions may apply to any distribution.
+## Automated scripts
+
+* [Fedora environment configuration](https://github.com/equilaterus/linux-scripts/blob/main/fedora/environment-config.sh): run this script prepare your development+gaming environment.
+
+{{< alert text="Following guidelines may apply to any distribution. Tested with Fedora." />}}
 
 ## General
 
@@ -268,7 +272,7 @@ sudo dnf install xsensors
 Install simple-scan and sane-backends. For example, of Fedora:
 
 ```
-sudo dng simple-scan sane-backends
+sudo dnf install simple-scan sane-backends
 ```
 
 
