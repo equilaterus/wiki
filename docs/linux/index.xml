@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on</title><link>https://equilaterus.com/wiki/docs/linux/</link><description>Recent content in Linux on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Unreal Linux</title><link>https://equilaterus.com/wiki/docs/linux/unreal-linux/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/linux/unreal-linux/</guid><description>💡 You can change the commands in the scripts section of `./package.json`. create #
-Create new content for your site:
-npm run create [path] [flags] See also the Hugo docs: hugo new.
-Docs based tree #
-Create a docs based tree — with a single command:
-npm run create -- --kind docs [section] For example, create a docs based tree named guides:
-npm run create -- --kind docs guides lint #
-Check scripts, styles, and markdown for errors:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on</title><link>https://equilaterus.com/wiki/docs/linux/</link><description>Recent content in Linux on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Desktop</title><link>https://equilaterus.com/wiki/docs/linux/linux-desktop/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/linux/linux-desktop/</guid><description>💡 You can change the commands in the scripts section of `./package.json`. These instructions may apply to any distribution.
+General #
+Sudo errors #
+If you&amp;rsquo;re getting errors when trying to use sudo, you should add your user to sudoers. Open terminal, run these commands and restart your machine:
+su - usermod -aG sudo username Optimize startup #
+Fedora #
+systemd-udev-settle:
+sudo systemctl mask systemd-udev-settle More info
+NetworkManager-wait-online.service:
+sudo systemctl disable NetworkManager-wait-online.</description></item></channel></rss>
