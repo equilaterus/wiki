@@ -29,6 +29,12 @@ toc: true
 
 * Open or create a project. After that, you can open it with Rider (or your IDE) and compile it as usual.
 
+### Common issues
+
+* **I have VSCodium instead of VSCode:** just try to create a new C++ project and disable VSCode when Unreal asks for it.
+
+* **ould not locate the assembly "Ionic.Zip.Reduced":** go to your **Engine/Binaries/DotNet/UnrealBuildTool** and locate the file **Ionic.Zip.Reduced**, duplicate that file into the parent folder **Engine/Binaries/DotNet/**.
+
 ## Recommended config
 
 * Build max parallel actions: [See UE Programming section]({{< relref "ue-programming#build-max-parallel-actions" >}})
