@@ -33,7 +33,9 @@ toc: true
 
 * **I have VSCodium instead of VSCode:** just try to create a new C++ project and disable VSCode when Unreal asks for it.
 
-* **ould not locate the assembly "Ionic.Zip.Reduced":** go to your **Engine/Binaries/DotNet/UnrealBuildTool** and locate the file **Ionic.Zip.Reduced**, duplicate that file into the parent folder **Engine/Binaries/DotNet/**.
+* **Could not locate the assembly "Ionic.Zip.Reduced":** go to your **Engine/Binaries/DotNet/UnrealBuildTool** and locate the file **Ionic.Zip.Reduced**, duplicate that file into the parent folder **Engine/Binaries/DotNet/**.
+
+* **Unreal Startup is extremely slow with a C++ project:** run (NOT debug) the project. Use debug mode only when you require to actually debug the code. It is a little bit unconfortable but your project will load much faster.
 
 ## Recommended config
 
@@ -74,6 +76,7 @@ To compile and generate your own binaries:
 Common errors:
 
 * Dependencies errors:
+  * * **Could not locate the assembly "Ionic.Zip.Reduced":** go to your **Engine/Binaries/DotNet/UnrealBuildTool** and locate the file **Ionic.Zip.Reduced**, duplicate that file into the parent folder **Engine/Binaries/DotNet/**.
   * [Blog birost post](https://blog.birost.com/a?ID=01650-81b216da-49aa-49a2-81f4-9b699aed1057)
   * [Unreal forum thread](https://forums.unrealengine.com/t/linux-build-missing-references/296487)
 
