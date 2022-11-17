@@ -2,7 +2,8 @@ var suggestions=document.getElementById("suggestions"),search=document.getElemen
 \$HOME/Unreal/VERSION/ Go inside the extracted folder Engine/Binaries/Linux and execute file: UnrealEditor.
 Open or create a project. After that, you can open it with Rider (or your IDE) and compile it as usual.
 Common issues #I have VSCodium instead of VSCode: just try to create a new C++ project and disable VSCode when Unreal asks for it.
-ould not locate the assembly \u0026ldquo;Ionic.Zip.Reduced\u0026rdquo;: go to your Engine/Binaries/DotNet/UnrealBuildTool and locate the file Ionic.Zip.Reduced, duplicate that file into the parent folder Engine/Binaries/DotNet/.
+Could not locate the assembly \u0026ldquo;Ionic.Zip.Reduced\u0026rdquo;: go to your Engine/Binaries/DotNet/UnrealBuildTool and locate the file Ionic.Zip.Reduced, duplicate that file into the parent folder Engine/Binaries/DotNet/.
+Unreal Startup is extremely slow with a C++ project: run (NOT debug) the project. Use debug mode only when you require to actually debug the code. It is a little bit unconfortable but your project will load much faster.
 Recommended config #Build max parallel actions: See UE Programming section
 If you\u0026rsquo;re using PlasticSCM: Equilaterus PlasticSCM+GitHub
 Compile your own binaries #To compile and generate your own binaries:
@@ -15,7 +16,7 @@ Setup.
 Copy results from LocalBuilds/Engine/Linux folder to any other location.
 Create or open a project with {OtherLocation}/Engine/Binaries/Linux/UnrealEditor. After opening it, you can use Rider or your IDE to modify it.
 Common errors:
-Dependencies errors: Blog birost post Unreal forum thread Other options:
+Dependencies errors: Could not locate the assembly \u0026ldquo;Ionic.Zip.Reduced\u0026rdquo;: go to your Engine/Binaries/DotNet/UnrealBuildTool and locate the file Ionic.Zip.Reduced, duplicate that file into the parent folder Engine/Binaries/DotNet/. Blog birost post Unreal forum thread Other options:
 Unreal containers installed build See Unreal Slackers on discord. `}),e.add({id:2,href:"/wiki/docs/programming/",title:"Programming",description:"Programming",content:""}),e.add({id:3,href:"/wiki/docs/unreal/",title:"Unreal",description:"Unreal",content:""}),e.add({id:4,href:"/wiki/docs/start/introduction/",title:"Introduction",description:"Welcome to our free and open-source Wiki. Here we share information regarding our workflows to create videogames and programming in general.",content:`Principles #Free and open-source.
 Multiplatform workflows but Linux centric.
 `}),e.add({id:5,href:"/wiki/docs/linux/desktop/",title:"Desktop Configuration",description:"Configure your Linux desktop environment.",content:`💡 We have some scripts to automate the configuration of your Linux environment. Automated scripts #Fedora environment configuration: run this script prepare your development+gaming environment. Following guidelines may apply to any distribution. Tested with Fedora. General #Sudo errors #If you\u0026rsquo;re getting errors when trying to use sudo, you should add your user to sudoers. Open terminal, run these commands and restart your machine:
