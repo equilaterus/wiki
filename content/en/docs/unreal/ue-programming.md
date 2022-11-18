@@ -41,14 +41,19 @@ BuildConfiguration.xml contents:
 <Configuration xmlns="https://www.unrealengine.com/BuildConfiguration">
 
 <ParallelExecutor>
-    <MaxProcessorCount>30</MaxProcessorCount>
-    <ProcessorCountMultiplier>2</ProcessorCountMultiplier>
+  <MaxProcessorCount>30</MaxProcessorCount>
+  <ProcessorCountMultiplier>2</ProcessorCountMultiplier>
+  <!-- Free memory per action in bytes, used to limit the number of
+    parallel actions if the machine is memory starved.
+    Set to 0 to disable free memory checking.
+    PROCEED WITH CAUTION -->
+  <MemoryPerActionBytes>0</MemoryPerActionBytes>
 </ParallelExecutor>
 
 </Configuration>
 ```
 
-In the previous example, by setting **ProcessorCountMultiplier to 2**, the build process takes into logical threads (if your CPU supports *Simultaneous Multi Threading (SMT)* or *hyper-threading*) to calculate the max actions to execute in parallel. Then, setting **MaxProcessorCount to 30** limits the compile thread count to 30. So if your CPU has 16 physical cores and 2 logical cores each (32 in total), this leaves 2 logical cores entirely free for other software, resulting in a smoother experience when multitasking during project compilation. *This can change depending on your available RAM if you do not set **MemoryPerActionBytes** to 0.*
+In the previous example, by setting **ProcessorCountMultiplier to 2**, the build process takes into account logical threads (if your CPU supports *Simultaneous Multi Threading (SMT)* or *hyper-threading*) to calculate the max actions to execute in parallel. Then, setting **MaxProcessorCount to 30** limits the compile thread count to 30. So if your CPU has 16 physical cores and 2 logical cores each (32 in total), this leaves 2 logical cores entirely free for other software, resulting in a smoother experience when multitasking during project compilation. *This can change depending on your available RAM if you do not set **MemoryPerActionBytes** to 0, but doing that can eventually crash your system.*
 
 If your settings have been configured properly, you will get the following UE build process output:
 
@@ -58,7 +63,8 @@ Building XXX actions with 30 processes...
 
 More info:
  * [Source](https://gpuopen.com/learn/threadripper-for-gamedev-ue4/)
- * [Oficial link](https://docs.unrealengine.com/5.1/en-US/build-configuration-for-unreal-engine/) see ParallelExecutor section
+ * [Oficial link](https://docs.unrealengine.com/5.1/en-US/build-configuration-for-unreal-engine/) see ParallelExecutor section.
+
 
 
 ## Unreal Plugins
