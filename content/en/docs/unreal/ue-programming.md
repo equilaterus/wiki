@@ -40,23 +40,25 @@ BuildConfiguration.xml contents:
 
 <Configuration xmlns="https://www.unrealengine.com/BuildConfiguration">
 
-<BuildConfiguration>
-    <ProcessorCountMultiplier>2</ProcessorCountMultiplier>
+<ParallelExecutor>
     <MaxProcessorCount>30</MaxProcessorCount>
-</BuildConfiguration>
+    <ProcessorCountMultiplier>2</ProcessorCountMultiplier>
+</ParallelExecutor>
 
 </Configuration>
 ```
 
-In the previous example, by setting ProcessorCountMultiplier to 2, results in the compiler using all 32 hardware threads of the 16 physical core Threadripper 1950X processor. Then, setting MaxProcessorCount to 30 to limit compile thread count to 30, leaves 2 logical cores entirely free for other software, resulting in a smooth experience when multitasking during project compilation.
+In the previous example, by setting **ProcessorCountMultiplier to 2**, the build process takes into logical threads (if your CPU supports *Simultaneous Multi Threading (SMT)* or *hyper-threading*) to calculate the max actions to execute in parallel. Then, setting **MaxProcessorCount to 30** limits the compile thread count to 30. So if your CPU has 16 physical cores and 2 logical cores each (32 in total), this leaves 2 logical cores entirely free for other software, resulting in a smoother experience when multitasking during project compilation. *This can change depending on your available RAM if you do not set **MemoryPerActionBytes** to 0.*
 
-If your settings have been configured properly, you will get the following UE4 build process output:
+If your settings have been configured properly, you will get the following UE build process output:
 
 ```
 Building XXX actions with 30 processes...
 ```
 
-More info: https://gpuopen.com/learn/threadripper-for-gamedev-ue4/
+More info:
+ * [Source](https://gpuopen.com/learn/threadripper-for-gamedev-ue4/)
+ * [Oficial link](https://docs.unrealengine.com/5.1/en-US/build-configuration-for-unreal-engine/) see ParallelExecutor section
 
 
 ## Unreal Plugins
