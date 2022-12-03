@@ -26,7 +26,8 @@ sudo systemctl mask systemd-udev-settle More info
 Optimize startup by disabling NetworkManager-wait-online.service:
 sudo systemctl disable NetworkManager-wait-online.service More info
 Disable check for updates at startup (KDE):
-sudo mv /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart.disabled/org.kde.discover.notifier.desktop Software #Git #Install instructions Terminal #Install zsh Run command: zsh Install and run Powerlevel10k Set it as your default shell: usermod --shell /usr/bin/zsh root usermod --shell /usr/bin/zsh YOUR_USERNAME To re-run the setup:
+sudo mkdir /etc/xdg/autostart.disabled sudo mv /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart.disabled/org.kde.discover.notifier.desktop In case that you\u0026rsquo;ve wanted to go back, just restore the files from the backup directory autostart.disabled. You may need to re-apply this commands after some system updates.
+Software #Git #Install instructions Terminal #Install zsh Run command: zsh Install and run Powerlevel10k Set it as your default shell: usermod --shell /usr/bin/zsh root usermod --shell /usr/bin/zsh YOUR_USERNAME To re-run the setup:
 p9k_configure VS Code (VSCodium) #Install VSCodium
 Set VSCode/Codium as default editor. more info
 xdg-mime default codium.desktop text/plain # If you're using code instead of codium xdg-mime default code.desktop text/plain GitHub Desktop #Repository.
