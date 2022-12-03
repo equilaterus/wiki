@@ -58,8 +58,11 @@ usermod -aG sudo username
 * Disable check for updates at startup (KDE):
 
   ```sh
+  sudo mkdir /etc/xdg/autostart.disabled
   sudo mv /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart.disabled/org.kde.discover.notifier.desktop
   ```
+
+  In case that you've wanted to go back, just restore the files from the backup directory *autostart.disabled*. You may need to re-apply this commands after some system updates.
 
 
 ## Software
