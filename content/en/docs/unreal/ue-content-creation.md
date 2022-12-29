@@ -44,7 +44,23 @@ toc: true
 
 ## Textures
 
-### Resizing/Converting TGA to PNG
+### Converting between formats (Any OS)
+
+* Use [ImageMagick](https://github.com/ImageMagick/ImageMagick).
+  ```bash
+  # For Fedora Linux
+  sudo dnf install ImageMagick
+  ```
+
+  > Downloads for any other OS [here](https://imagemagick.org/script/download.php)
+
+* Convert all files in a folder to PNG:
+
+  ```bash
+  mogrify -format png *.*
+  ```
+
+### Alternative converting TGA to PNG (Windows)
 
 * Use this CLI tool: [tga2png](https://github.com/shusaura85/tga2png)
 * Open the TGA file, if it looks completely transparent, add a 1 as a final parameter otherwise do not use it. Example:
