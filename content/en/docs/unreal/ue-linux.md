@@ -22,12 +22,3 @@ toc: true
 
 See [our article on The Science of Code](https://thescienceofcode.com/unreal-5-linux/): a compact but comprehensive guide that includes instructions to install, execute and troubleshoot UE 5 for Linux.
 
-
-## PlasticSCM common errors
-
-- **Connection refused during check-in**:
-
-  ```
-  sudo systemctl stop plasticscm-server
-  sudo systemctl start plasticscm-server
-  ```
