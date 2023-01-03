@@ -33,7 +33,7 @@ We have created an extension to access your Github Issues, directly from Plastic
   sudo systemctl start plasticscm-server
   ```
 
-# Plastic custom file types (filetypes.conf)
+## Plastic custom file types (filetypes.conf)
 
 > Plastic SCM handles two different file types: binaries and text files. By default, Plastic tries to identify a newly added file by using an internal algorithm and a built-in list of known extensions. But sometimes a file that should be binary is identified as text or viceversa. [Source](https://blog.plasticscm.com/2008/03/custom-file-types.html).
 
