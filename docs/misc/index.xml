@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Misc on</title><link>https://equilaterus.com/wiki/docs/misc/</link><description>Recent content in Misc on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/misc/index.xml" rel="self" type="application/rss+xml"/><item><title>PlasticSCM</title><link>https://equilaterus.com/wiki/docs/misc/plasticscm/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://equilaterus.com/wiki/docs/misc/plasticscm/</guid><description>Download Plastic #
+Official downloads.
+PlasticSCM Github Extension #
+We have created an extension to access your Github Issues, directly from PlasticSCM:
+Available for Linux and Windows. Open source. PlasticSCM common errors #
+Connection refused during check-in (Linux): execute the following commands
+sudo systemctl stop plasticscm-server sudo systemctl start plasticscm-server Plastic custom file types (filetypes.conf) #
+Plastic SCM handles two different file types: binaries and text files. By default, Plastic tries to identify a newly added file by using an internal algorithm and a built-in list of known extensions.</description></item></channel></rss>
