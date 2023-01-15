@@ -4,6 +4,9 @@
 /** Import theme variables */
 @import "common/variables";
 
+/** Import custom fonts */
+@import "common/custom_fonts";
+
 /** Import Bootstrap */
 @import "bootstrap/scss/bootstrap";
 
@@ -20,7 +23,6 @@ body {
 @import "katex/dist/katex";
 
 /** Import theme styles */
-@import "common/fonts";
 @import "common/global";
 @import "common/dark";
 @import "components/alerts";
