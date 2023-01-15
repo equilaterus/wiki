@@ -5,7 +5,7 @@
 @import "common/variables";
 
 /** Import custom fonts */
-@import "common/custom_fonts";
+@import "common/custom_fonts_variables";
 
 /** Import Bootstrap */
 @import "bootstrap/scss/bootstrap";
@@ -44,3 +44,4 @@ body {
 
 /** Import custom styles */
 @import "common/custom";
+@import "common/custom_fonts";
