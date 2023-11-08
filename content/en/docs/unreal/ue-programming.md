@@ -77,7 +77,7 @@ More info:
 
 ### Reverb
 
-To activate the reverb, add the following line to your project **/Config/DefaultEngine.ini**:
+To activate the reverb (on Linux or Windows), add the following line to your project **/Config/DefaultEngine.ini**:
 
 ```
 [Audio]
@@ -88,6 +88,8 @@ Create a **Sound > Sound Attenuation** asset and configure it on your **Cue** as
 
 * Settings -> Apply Reverb: True.
 * Settings -> Reverb effect: select one from the dropdown.
+
+> Important! Do NOT forget to add an **Attenuation** configuration to your **Cue** otherwise reverb will not work.
 
 * For more info check this video [Reverb Tutorial](https://www.youtube.com/watch?v=ZFjD5xtoMSg). Note that if you added the configuration to your project .ini, you won't need to execute additional commands on the UE console.
 
