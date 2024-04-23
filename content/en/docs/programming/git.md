@@ -68,10 +68,6 @@ To enable **Git LFS** on your project, first check your repository provider avai
    *.targa filter=lfs diff=lfs merge=lfs -text binary
    *.mp3 filter=lfs diff=lfs merge=lfs -text binary
    *.wav filter=lfs diff=lfs merge=lfs -text binary
-
-
-   # Anything in `/RawContent` dir.
-   /RawContent/**/* filter=lfs diff=lfs merge=lfs -text binary
    ```
 
 ### Git LFS Commands
