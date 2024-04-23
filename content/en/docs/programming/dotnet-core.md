@@ -1,7 +1,7 @@
 ---
 title: ".Net Core"
-description: "Quick-starts and guidelines for .Net Core developemnt."
-lead: "Quick-starts and guidelines for .Net Core developemnt"
+description: "Quick-starts and guidelines for .Net Core development."
+lead: "Quick-starts and guidelines for .Net Core development"
 date: 2024-23-04
 lastmod: 2024-23-04
 draft: false
