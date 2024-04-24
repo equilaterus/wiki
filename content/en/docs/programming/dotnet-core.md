@@ -115,7 +115,73 @@ public class UsersController : ControllerBase
 
 ### Global error handling
 
+For **.NET 8**:
+
+1. Add these lines to your Program.cs:
+
+   ```csharp
+   ...
+   builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+   builder.Services.AddProblemDetails();
+
+   ...
+   app.UseExceptionHandler();
+   ```
+
+2. Create a ViewModel:
+
+   ```csharp
+   public class ErrorResponseViewModel
+   {
+       public string Message { get; set; }
+
+       public int StatusCode { get; set; }
+   }
+   ```
+
+3. Add and customize the global exception handler:
+
+   ```csharp
+   public class GlobalExceptionHandler : IExceptionHandler
+   {
+       private readonly ILogger _logger;
+       public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
+       {
+           _logger = logger;
+       }
+
+       public async ValueTask<bool> TryHandleAsync(
+           HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+       {
+           _logger.LogError($"Exception [{ exception.Message }]. Inner exception [{ exception.InnerException?.Message}].  Stack trace: [{ exception.StackTrace }]");
+
+           var errorResponse = new ErrorResponseViewModel();
+
+           switch (exception)
+           {
+               case BadHttpRequestException:
+                   errorResponse.StatusCode = (int)HttpStatusCode.BadRequest;
+                   errorResponse.Message = exception.GetType().Name;
+                   break;
+               default:
+                   errorResponse.StatusCode = (int)HttpStatusCode.InternalServerError;
+                   errorResponse.Message = "Internal Server Error";
+                   break;
+           }
+
+           httpContext.Response.StatusCode = errorResponse.StatusCode;
+           await httpContext
+               .Response
+               .WriteAsJsonAsync(errorResponse, cancellationToken);
+
+           // You may return false and set another ExceptionHandler to handle specific exceptions
+           return true;
+       }
+   }
+   ```
+
 More info:
+* [Global error handling .NET 8](https://code-maze.com/dotnet-use-iexceptionhandler-to-handle-exceptions/)
 * [Global error handling tutorial](https://code-maze.com/global-error-handling-aspnetcore/)
 * [Official guide](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-8.0)
 
