@@ -19,6 +19,7 @@ toc: true
 * .NET 8.0 [gamestoolkit.api](https://github.com/gamestoolkit/gamestoolkit.api)
 
   Clean Architecture / Dapper / EFCore / CQRS / AutoMapper / Swagger / Functional testing / Unit testing / CI.
+
 * .NET Core 2.2 [AspCore.SampleAPI](https://github.com/dacanizares/AspCore.SampleAPI)
 
   Clean Architecture / Domain / Behaviors / Queries / AutoMapper / Swagger / Functional testing / CI.
@@ -172,7 +173,27 @@ services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 services.AddAutoMapper(typeof(Program))
 ```
 
-## Performance
+### Docker development (with Visual Studio)
+
+1. Install [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) and configure it for **Linux Containers**.
+2. Run these commands (you may need to enable CPU virtualization on your BIOS):
+
+   ```sh
+   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+   dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+   # If update fails, try to install: wsl.exe --install
+   wsl.exe --update
+
+   wsl --set-default-version 2
+   ```
+
+3. Restart. Accept SSL certificates and Re-restart your machine.
+4. You're ready to go!
+
+* Problems? [Check this guide](https://learn.microsoft.com/en-us/windows/wsl/install-manual)
+
+### Performance
 
 * A kind of - Practical intro to [Async APIs](https://www.carlrippon.com/scalable-and-performant-asp-net-core-web-apis-asynchronous-operations/)
   * Async discussions:
