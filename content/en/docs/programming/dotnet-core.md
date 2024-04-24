@@ -13,95 +13,28 @@ weight: 10
 toc: true
 ---
 
-## Official guides
+
+## Sample Projects
+
+* .NET 8.0 [gamestoolkit.api](https://github.com/gamestoolkit/gamestoolkit.api)
+
+  Clean Architecture / Dapper / EFCore / CQRS / AutoMapper / Swagger / Functional testing / Unit testing / CI.
+* .NET Core 2.2 [AspCore.SampleAPI](https://github.com/dacanizares/AspCore.SampleAPI)
+
+  Clean Architecture / Domain / Behaviors / Queries / AutoMapper / Swagger / Functional testing / CI.
+
+## Quick guides/samples
+
+{{< alert icon="💡" text="Hotspots and cheatsheets for your common use cases." />}}
+
+
+
+### Web API Example
 
 * Build web APIs with [.NET 8.0](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-8.0)
   * Tutorial - Controllers [.NET 8.0](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0)
   * Tutorial: Minimal API [.NET 8.0](https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-8.0)
 * Action return types [.NET 8.0](https://learn.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-8.0)
-
-## Sample Projects
-
-* .NET 8.0 [gamestoolkit.api](https://github.com/gamestoolkit/gamestoolkit.api) (Clean Architecture / Dapper / EFCore / CQRS / AutoMapper / Swagger / Functional testing / Unit testing / CI)
-* .NET Core 2.2 [AspCore.SampleAPI](https://github.com/dacanizares/AspCore.SampleAPI) (Clean Architecture / Domain / Behaviors / Queries / AutoMapper / Swagger / Functional testing / CI)
-
-### Vortex
-
-Write elegant and testeable solutions on C# using a Monadic Framework. ASP Core joins the functional side!
-
-* [Vortex Repository](https://github.com/equilaterus/Vortex)
-* [Sample Apps](https://github.com/equilaterus/Vortex.Samples)
-* [Official website](https://equilaterus.github.io/Vortex/)
-
-## Performance
-
-* A kind of - Practical intro to [Async APIs](https://www.carlrippon.com/scalable-and-performant-asp-net-core-web-apis-asynchronous-operations/)
-  * Async discussions:
-    * [Sync vs Async](https://caleblloyd.com/software/net-core-mvc-thread-pool-vs-async/)
-    * [Async and IIS](https://blogs.msdn.microsoft.com/rickandy/2011/07/19/should-my-database-calls-be-asynchronous-part-ii/)
-    * [My take on Async - experiment](http://www.tugberkugurlu.com/archive/my-take-on-task-base-asynchronous-programming-in-c-sharp-5-0-and-asp-net-mvc-web-applications)
-
-* Use DbContextPooling to improve the performance: [.Net Core 2.1](https://neelbhatt.com/2018/02/27/use-dbcontextpooling-to-improve-the-performance-net-core-2-1-feature/)
-
-## Other guides
-
-* Global error handling in [ASP Core](https://code-maze.com/global-error-handling-aspnetcore/)
-
-## EF Core Hotspots
-
-* Startup.cs -> Configure Services
-
-  ```csharp
-  services.AddDbContext<MYContext>(
-      options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-      serverOptions => serverOptions.MigrationsAssembly("ASSEMBLYNAME")));
-  ```
-
-* appsettings.json
-
-  ```csharp
-  {
-    "ConnectionStrings": {
-      "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=DBNAME;Trusted_Connection=True;MultipleActiveResultSets=true"
-    },
-    ...
-  }
-  ```
-
-* DbContext:
-
-  ```csharp
-  public class MYContext : DbContext
-  {
-    public MYContext() { }
-
-    public MYContext(DbContextOptions<MYContext> options)
-            : base(options) { }
-
-    public DbSet<...> ....
-  }
-  ```
-
-* Testing InMemoryDatabase provider:
-
-  ```csharp
-  new DbContextOptionsBuilder<MYContext>()
-    .UseInMemoryDatabase(databaseName: NAME)
-    .Options
-  ```
-
-## AutoMapper DI
-
-[AutoMapper Extensions for Microsoft DI](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection).
-
-```csharp
-// Add this line to your startup.cs
-services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-services.AddAutoMapper(typeof(Program))
-```
-
-## Quick Web API Example
 
 ```csharp
 [Route("api/[controller]")]
@@ -178,3 +111,82 @@ public class UsersController : ControllerBase
     }
 }
 ```
+
+### Global error handling
+
+More info:
+* [Global error handling tutorial](https://code-maze.com/global-error-handling-aspnetcore/)
+* [Official guide](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-8.0)
+
+### EF Core Hotspots
+
+* Startup.cs -> Configure Services
+
+  ```csharp
+  services.AddDbContext<MYContext>(
+      options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+      serverOptions => serverOptions.MigrationsAssembly("ASSEMBLYNAME")));
+  ```
+
+* appsettings.json
+
+  ```json
+  {
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=DBNAME;Trusted_Connection=True;MultipleActiveResultSets=true"
+    },
+    ...
+  }
+  ```
+
+* DbContext:
+
+  ```csharp
+  public class MYContext : DbContext
+  {
+    public MYContext() { }
+
+    public MYContext(DbContextOptions<MYContext> options)
+            : base(options) { }
+
+    public DbSet<...> ....
+  }
+  ```
+
+* Testing InMemoryDatabase provider:
+
+  ```csharp
+  new DbContextOptionsBuilder<MYContext>()
+    .UseInMemoryDatabase(databaseName: NAME)
+    .Options
+  ```
+
+### AutoMapper DI
+
+[AutoMapper Extensions for Microsoft DI](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection).
+
+```csharp
+// Add this line to your startup.cs
+services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// Or this one...
+services.AddAutoMapper(typeof(Program))
+```
+
+## Performance
+
+* A kind of - Practical intro to [Async APIs](https://www.carlrippon.com/scalable-and-performant-asp-net-core-web-apis-asynchronous-operations/)
+  * Async discussions:
+    * [Sync vs Async](https://caleblloyd.com/software/net-core-mvc-thread-pool-vs-async/)
+    * [Async and IIS](https://blogs.msdn.microsoft.com/rickandy/2011/07/19/should-my-database-calls-be-asynchronous-part-ii/)
+    * [My take on Async - experiment](http://www.tugberkugurlu.com/archive/my-take-on-task-base-asynchronous-programming-in-c-sharp-5-0-and-asp-net-mvc-web-applications)
+
+* Use DbContextPooling to improve the performance: [.Net Core 2.1](https://neelbhatt.com/2018/02/27/use-dbcontextpooling-to-improve-the-performance-net-core-2-1-feature/)
+
+
+## Vortex
+
+Write elegant and testeable solutions on C# using a Monadic Framework. ASP Core joins the functional side!
+
+* [Vortex Repository](https://github.com/equilaterus/Vortex)
+* [Sample Apps](https://github.com/equilaterus/Vortex.Samples)
+* [Official website](https://equilaterus.github.io/Vortex/)
