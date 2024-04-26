@@ -53,6 +53,10 @@ $custom-btn-dark-color: #fff;
   color: $custom-btn-color;
 }
 
+.no-border {
+  border: none !important;
+}
+
 body {
   @include custom-colors(
     $custom-color,
