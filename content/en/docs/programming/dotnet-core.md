@@ -239,6 +239,88 @@ services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 services.AddAutoMapper(typeof(Program))
 ```
 
+### Mediatr
+
+* Install:
+  ```
+  dotnet add package MediatR
+  ```
+
+* Injection:
+  ```csharp
+  services.AddMediatR(cfg => {
+      cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+  });
+  ```
+
+* Request / Response (single handler):
+  ```csharp
+  // Request with return
+  public class Command : IRequest<string> // IRequest<ReturnType>
+  {
+    // Add command params here
+  }
+  // Response (note generic params)
+  public class CommandHandler : IRequestHandler<Command, string> // IRequestHandler<Request, ReturnType>
+  {
+      public async Task<string> Handle(Command request, CancellationToken cancellationToken)
+      {
+          // You may need to read your command params
+          // ...
+          // ...
+          return Task.FromResult("Result");
+      }
+  }
+  // Send message from any other place
+  var command = new Command();
+  var response = await mediator.Send(Command);
+  ```
+
+  If you do not require a response:
+
+  ```csharp
+  public class OneWay : IRequest { }
+  public class OneWayHandler : IRequestHandler<OneWay>
+  {
+      public async Task Handle(OneWay request, CancellationToken cancellationToken)
+      {
+          // Do work
+          // ...
+          return Task.CompletedTask;
+      }
+  }
+  ```
+
+* Notifications (multiple handlers):
+
+  ```csharp
+  public class MyEvent : INotification { }
+
+  public class MyEventStore : INotificationHandler<MyEvent>
+  {
+      public async Task Handle(MyEvent notification, CancellationToken cancellationToken)
+      {
+          // Save in your DB
+          // ...
+          return Task.CompletedTask;
+      }
+  }
+
+  public class MyEventNotify : INotificationHandler<MyEvent>
+  {
+      public async Task Handle(MyEvent notification, CancellationToken cancellationToken)
+      {
+          // Do work
+          // ...
+          return Task.CompletedTask;
+      }
+  }
+  ```
+
+* More info:
+  * [Wiki](https://github.com/jbogard/MediatR/wiki)
+  * [Official repo](https://github.com/jbogard/MediatR)
+
 ### Docker development (with Visual Studio)
 
 1. Install [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) and configure it for **Linux Containers**.
