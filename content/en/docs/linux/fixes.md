@@ -13,8 +13,6 @@ weight: 130
 toc: true
 ---
 
-# DNF Errors
-
 ## DNF Update: invalid certificate
 
 If **dnf update** gives you an error like this one:
@@ -58,3 +56,15 @@ sudo dnf clean all
 ```
 
 4. Reinstall the repo and update as usual.
+
+## VLC
+
+# VLC error: Could not decode h264 fedora
+
+Run the following command:
+
+```sh
+sudo dnf install vlc-plugin-gstreamer vlc-plugin-ffmpeg
+```
+
+This solution also solves **Fedora Dragon Player not playing videos**.
