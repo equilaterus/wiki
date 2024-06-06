@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on</title><link>https://equilaterus.com/wiki/docs/programming/</link><description>Recent content in Programming on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>.Net Core</title><link>https://equilaterus.com/wiki/docs/programming/dotnet-core/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://equilaterus.com/wiki/docs/programming/dotnet-core/</guid><description>Sample Projects #
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on</title><link>https://equilaterus.com/wiki/docs/programming/</link><description>Recent content in Programming on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="https://equilaterus.com/wiki/docs/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Python</title><link>https://equilaterus.com/wiki/docs/programming/python/</link><pubDate>Thu, 06 Jun 2024 00:00:00 +0000</pubDate><guid>https://equilaterus.com/wiki/docs/programming/python/</guid><description>Python Virtual Environment #
+Installation:
+pip install virtualenv Creation :
+python -m venv PATH For example:
+python -m venv venv Activate it!
+Linux or mac: source venv/bin/activate Windows (cdm or Powershell): venv\Scripts\activate.bat venv\Scripts\activate.ps1 Flask Web API example #
+Create a file called main.py with the following sample code:
+# # DB # import sqlite3 def connect_to_db(): conn = sqlite3.connect('database.db') return conn def create_db_table(): try: conn = connect_to_db() conn.execute(''' CREATE TABLE users ( id INTEGER PRIMARY KEY NOT NULL, name TEXT NOT NULL ); ''') conn.</description></item><item><title>.Net Core</title><link>https://equilaterus.com/wiki/docs/programming/dotnet-core/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://equilaterus.com/wiki/docs/programming/dotnet-core/</guid><description>Sample Projects #
 .NET 8.0 gamestoolkit.api
 Clean Architecture / Dapper / EFCore / CQRS / AutoMapper / Swagger / Functional testing / Unit testing / CI.
 .NET Core 2.2 AspCore.SampleAPI
