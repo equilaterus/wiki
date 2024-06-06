@@ -1,7 +1,7 @@
 ---
 title: "Python"
 description: "Quick-starts and guidelines for Python development."
-lead: "Quick-starts and guidelines for Pythondevelopment"
+lead: "Quick-starts and guidelines for Python development"
 date: 2024-06-06
 lastmod: 2024-06-06
 draft: false
