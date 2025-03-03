@@ -228,6 +228,38 @@ More info:
     .Options
   ```
 
+### EF Core Commands
+
+* Add migration:
+
+```
+dotnet ef migrations add NAME
+```
+
+* Remove last migration:
+
+```
+dotnet ef migrations remove
+```
+
+* Update database:
+
+```
+dotnet ef database update
+```
+
+* Drop (force):
+
+```
+dotnet ef database drop -f
+```
+
+* Start clean
+
+```
+dotnet ef database update 0
+```
+
 ### AutoMapper DI
 
 [AutoMapper Extensions for Microsoft DI](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection).
