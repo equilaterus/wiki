@@ -21,7 +21,7 @@ Global error handling .NET 8 Global error handling tutorial Official guide EF Co
 services.AddDbContext\u0026lt;MYContext\u0026gt;( options =\u0026gt; options.UseSqlServer(Configuration.GetConnectionString(\u0026quot;DefaultConnection\u0026quot;), serverOptions =\u0026gt; serverOptions.MigrationsAssembly(\u0026quot;ASSEMBLYNAME\u0026quot;))); appsettings.json
 { \u0026quot;ConnectionStrings\u0026quot;: { \u0026quot;DefaultConnection\u0026quot;: \u0026quot;Server=(localdb)\\\\mssqllocaldb;Database=DBNAME;Trusted_Connection=True;MultipleActiveResultSets=true\u0026quot; }, ... } DbContext:
 public class MYContext : DbContext { public MYContext() { } public MYContext(DbContextOptions\u0026lt;MYContext\u0026gt; options) : base(options) { } public DbSet\u0026lt;...\u0026gt; .... } Testing InMemoryDatabase provider:
-new DbContextOptionsBuilder\u0026lt;MYContext\u0026gt;() .UseInMemoryDatabase(databaseName: NAME) .Options AutoMapper DI #AutoMapper Extensions for Microsoft DI.
+new DbContextOptionsBuilder\u0026lt;MYContext\u0026gt;() .UseInMemoryDatabase(databaseName: NAME) .Options EF Core Commands #Add migration: dotnet ef migrations add NAME Remove last migration: dotnet ef migrations remove Update database: dotnet ef database update Drop (force): dotnet ef database drop -f Start clean dotnet ef database update 0 AutoMapper DI #AutoMapper Extensions for Microsoft DI.
 // Add this line to your startup.cs services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // Or this one... services.AddAutoMapper(typeof(Program)) Mediatr #Install:
 dotnet add package MediatR Injection:
 services.AddMediatR(cfg =\u0026gt; { cfg.RegisterServicesFromAssembly(typeof(Program).Assembly); }); Request / Response (single handler):
