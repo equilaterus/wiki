@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
-description: "Welcome to our free and open-source Wiki. Here we share information regarding our workflows to create videogames and programming in general."
-lead: "This is our free and open-source Wiki. Here we share information regarding videogame programming and coding in general."
+description: "Welcome to our free and open-source wiki. Here we share information about our workflows for creating video games and programming in general."
+lead: "This is our free and open-source wiki. Here we share information about video game programming and coding in general."
 draft: false
 images: []
 menu:
@@ -15,4 +15,4 @@ toc: true
 
 1. Free and open-source.
 
-2. Multiplatform workflows but Linux centric.
+2. Multiplatform workflows, but Linux-centric.

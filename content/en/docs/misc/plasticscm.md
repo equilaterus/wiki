@@ -17,9 +17,9 @@ toc: true
 
 [Official downloads](https://www.plasticscm.com/download).
 
-## PlasticSCM Github Extension
+## PlasticSCM GitHub Extension
 
-We have created an extension to access your Github Issues, directly from PlasticSCM:
+We have created an extension to access your GitHub issues directly from PlasticSCM:
 
 * Available for Linux and Windows.
 * [Open source](https://github.com/equilaterus-gamestudios/PlasticSCM-GitHub-extension).
@@ -35,7 +35,7 @@ We have created an extension to access your Github Issues, directly from Plastic
 
 ## Plastic custom file types (filetypes.conf)
 
-> Plastic SCM handles two different file types: binaries and text files. By default, Plastic tries to identify a newly added file by using an internal algorithm and a built-in list of known extensions. But sometimes a file that should be binary is identified as text or viceversa. [Source](https://blog.plasticscm.com/2008/03/custom-file-types.html).
+> Plastic SCM handles two different file types: binaries and text files. By default, Plastic tries to identify a newly added file by using an internal algorithm and a built-in list of known extensions. But sometimes a file that should be binary is identified as text, or vice versa. [Source](https://blog.plasticscm.com/2008/03/custom-file-types.html).
 
 Create a file named **filetypes.conf** under the root folder of your workspace, and customize the contents based on the following snippet:
 
