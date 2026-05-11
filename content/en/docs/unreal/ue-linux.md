@@ -15,10 +15,9 @@ toc: true
 
 * Official binaries: [Download page](https://www.unrealengine.com/en-US/linux)
 * Recommended IDE: [Rider Linux](https://www.jetbrains.com/rider/download/#section=linux).
-* Recommended Git App: [Github Desktop for Linux](https://github.com/shiftkey/desktop).
+* Recommended Git app: [GitHub Desktop for Linux](https://github.com/shiftkey/desktop).
 * PlasticSCM: [Linux packages](https://www.plasticscm.com/plastic-for-linux)
 
 ## Complete UE-Linux Guide
 
-See [our article on The Science of Code](https://thescienceofcode.com/unreal-5-linux/): a compact but comprehensive guide that includes instructions to install, execute and troubleshoot UE 5 for Linux.
-
+See [our article on The Science of Code](https://thescienceofcode.com/unreal-5-linux/): a compact but comprehensive guide that includes instructions to install, run, and troubleshoot UE 5 on Linux.

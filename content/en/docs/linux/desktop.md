@@ -17,7 +17,7 @@ toc: true
 
 ## Automated scripts
 
-* [Fedora environment configuration](https://github.com/equilaterus/linux-scripts/blob/main/fedora/environment-config.sh): run this script prepare your development+gaming environment.
+* [Fedora environment configuration](https://github.com/equilaterus/linux-scripts/blob/main/fedora/environment-config.sh): run this script to prepare your development and gaming environment.
 
 {{< alert text="Following guidelines may apply to any distribution. Tested with Fedora." />}}
 
@@ -25,7 +25,7 @@ toc: true
 
 ### Sudo errors
 
-If you're getting errors when trying to use **sudo**, you should add your user to *sudoers*. Open terminal, run these commands and restart your machine:
+If you're getting errors when trying to use **sudo**, you should add your user to *sudoers*. Open a terminal, run these commands, and restart your machine:
 
 ```
 su -
@@ -62,7 +62,7 @@ usermod -aG sudo username
   sudo mv /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart.disabled/org.kde.discover.notifier.desktop
   ```
 
-  In case that you've wanted to go back, just restore the files from the backup directory *autostart.disabled*. You may need to re-apply this commands after some system updates.
+  If you want to revert this, just restore the files from the backup directory *autostart.disabled*. You may need to re-apply these commands after some system updates.
 
 
 ## Software
@@ -75,7 +75,7 @@ usermod -aG sudo username
 ### Terminal
 
 1. [Install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#how-to-install-zsh-on-many-platforms)
-2. Run command:
+2. Run this command:
    ```
    zsh
    ```
@@ -94,7 +94,7 @@ p9k_configure
 ### VS Code (VSCodium)
 
 * [Install VSCodium](https://vscodium.com/#install)
-* Set VSCode/Codium as default editor. [more info](https://askubuntu.com/questions/648105/how-do-i-setup-microsoft-visual-studio-code-as-a-default-editor#:~:text=Debian%20alternatives%20system&text=Some%20need%20you%20to%20set,to%20the%20nautilus%20context%20menu.)
+* Set VSCode/Codium as the default editor. [More info](https://askubuntu.com/questions/648105/how-do-i-setup-microsoft-visual-studio-code-as-a-default-editor#:~:text=Debian%20alternatives%20system&text=Some%20need%20you%20to%20set,to%20the%20nautilus%20context%20menu.)
 
   ```
   xdg-mime default codium.desktop text/plain
@@ -107,8 +107,8 @@ p9k_configure
 
 * [Repository](https://github.com/shiftkey/desktop).
   * Install with **dnf** on Fedora.
-  * Install with apt or download *.deb* on Debian / Ubuntu (on KDE right click run with Discover)
-  * Use app-image on *arch*.
+  * Install with apt or download a *.deb* package on Debian / Ubuntu (on KDE, right-click and run it with Discover).
+  * Use an AppImage on *Arch*.
 
 * If you're working with Windows users:
 
@@ -131,7 +131,7 @@ nvm use 14 (OPTIONAL STEP)
 * [Installation Debian](https://docs.docker.com/engine/install/debian/)
 * [Installation Arch](https://linuxhint.com/arch-linux-docker-tutorial/)
 
-Add your user to docker group and restart:
+Add your user to the `docker` group and restart:
 
 ```
 su -
@@ -140,11 +140,11 @@ usermod -aG docker username
 
 ### Rider
 
-Install with **tool-box**:
+Install with **Toolbox**:
   * [Download](https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux)
   * [Installation Guide](https://www.jetbrains.com/help/rider/Installation_guide.html#toolbox)
 
-If your project has NPM tasks with msbuild (if NPM INSTALL fails during compilation), run *Rider* using a terminal with NPM access. For example: left click on Rider search for Application > Command run. Copy and run it:
+If your project has NPM tasks with MSBuild (for example, if `npm install` fails during compilation), run *Rider* from a terminal with NPM access. For example: locate Rider, search for `Application > Command`, copy the command, and run it:
 ```
 /home/equilaterus/.local/share/JetBrains/Toolbox/apps/Rider/ch-0/213.6775.4/bin/rider.sh
 ```
@@ -168,7 +168,7 @@ sh rider.sh
 
 * [Installation Fedora](https://docs.microsoft.com/en-us/dotnet/core/install/linux-fedora#install-the-sdk)
 * [Installation Debian](https://docs.microsoft.com/en-us/dotnet/core/install/linux-debian)
-* [Instalation Arch](https://wiki.archlinux.org/title/.NET#Installation)
+* [Installation Arch](https://wiki.archlinux.org/title/.NET#Installation)
 * Snaps can have problems when running web-apps.
 
 If you have multiple versions of dotnet core, create a file **global.json** in the same location as this readme with the following contents:
@@ -181,7 +181,7 @@ If you have multiple versions of dotnet core, create a file **global.json** in t
 }
 ```
 
-Replace the version with a 3.1.x installed on your machine. To see your SDKs:
+Replace the version with a `3.1.x` version installed on your machine. To see your SDKs:
 
 ```
 dotnet --list-sdks
@@ -193,17 +193,17 @@ If you have trouble with [dotnet ef](https://docs.microsoft.com/en-us/ef/core/cl
 export PATH="$PATH:$HOME/.dotnet/tools/"
 ```
 
-To fix certificates error run:
+To fix certificate errors, run:
 
 ```
 dotnet dev-certs https
 ```
 
-You'll still have to configure trust certificates or access your page as unsecure resource from your web browser. As it is a dev env, you can safely access it as an unsafe site.
+You'll still have to configure trusted certificates or access your page as an insecure resource from your web browser. Since this is a dev environment, you can access it as an unsafe site.
 
 **IMPORTANT!**: Before upgrading your system disable source package repo: **packages-microsoft-com-prod** (ADDED WHEN INSTALLING POWERSHELL), otherwise you may need to uninstall all dotnet (*sudo dnf remove 'dotnet*'*) and reinstall it again (after removing the repo). To remove it you can go to **Discover > Settings** and disable the repo.
 
-Error **"The configured user limit (128) on the number of inotify instances has been reached."**, increase the instances with the following command:
+If you get the error **"The configured user limit (128) on the number of inotify instances has been reached."**, increase the limit with the following command:
 
 ```
 echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
@@ -213,17 +213,17 @@ echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo
 
 #### Installation
 
-You can install it as a dotnet tool (after installing dotnet):
+You can install it as a .NET tool (after installing .NET):
 
 ```
 dotnet tool install --global PowerShell
 ```
 
-Other methods of installation are not recommended as MSFT repo can cause issues with your dotnet installation.
+Other installation methods are not recommended, as the Microsoft repo can cause issues with your .NET installation.
 
 #### Usage
 
-> After that use **pwsh** to start powershell.
+> After that, use **pwsh** to start PowerShell.
 
 For dotnet core 3.1:
 

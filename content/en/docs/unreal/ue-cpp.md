@@ -1,7 +1,7 @@
 ---
 title: "UE C++"
-description: "Unreal Engine programming C++"
-lead: "Unreal Engine programming C++"
+description: "Unreal Engine C++ programming."
+lead: "Unreal Engine C++ programming."
 date: 2020-10-13T15:21:01+02:00
 lastmod: 2020-10-13T15:21:01+02:00
 draft: false
@@ -40,7 +40,7 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
 |FMath                |Math/UnrealMathUtility.h    |
 |UPhysicsHandleComponent | PhysicsEngine/PhysicsHandleComponent.h |
 
-* (*) KismetMath is usually a wrapper to FMath.
+* (*) KismetMath is usually a wrapper around `FMath`.
 
 ### Mapping types
 
@@ -80,17 +80,17 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
 
 ### Tips
 
-* You can create C++ files either manually or using the UE editor, first case requires to regenerate project files (left click on .uproject Generate Visual Studio Project Files).
+* You can create C++ files either manually or by using the UE editor. In the first case, you need to regenerate the project files (right-click the `.uproject` file and select `Generate Visual Studio Project Files`).
 * After syncing files with Git, it's a good idea to regenerate project files.
-* If Hot reloading doesn't seem to take your changes, close editor and Rebuild project.
-* How to found BP nodes? Put your mouse over the node, see target and try to lookup for the file and lastly search for some keyword on the function name. For example:
+* If hot reloading doesn't seem to apply your changes, close the editor and rebuild the project.
+* How do you find BP nodes? Hover over the node, inspect the target, look up the file, and then search for a keyword from the function name. For example:
 
   ![UE find Blueprint nodes on C++](https://equilaterus.github.io/wikilaterus/assets/img/ue4/search-blueprint-code-cpp.png)
 
 ### Useful tools
 
 * Recommended IDE: [Rider for UE](https://www.jetbrains.com/es-es/lp/rider-unreal/).
-* Recommended Git App: [Github Desktop](https://desktop.github.com/).
+* Recommended Git app: [GitHub Desktop](https://desktop.github.com/).
 * PlasticSCM.
 
 ## Examples
@@ -239,7 +239,7 @@ FVector UClass::GetMaxGrabLocation() const
 ```
 
 
-### Linetracing samples
+### Line tracing samples
 
 Complete custom sample:
 

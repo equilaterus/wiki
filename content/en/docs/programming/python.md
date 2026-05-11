@@ -30,13 +30,13 @@ toc: true
    python -m venv venv
    ```
 
-3. Activate it!
+3. Activate it:
 
-   * Linux or mac:
+   * Linux or macOS:
      ```sh
      source venv/bin/activate
      ```
-   * Windows (cdm or Powershell):
+   * Windows (`cmd` or PowerShell):
      ```sh
      venv\Scripts\activate.bat
      venv\Scripts\activate.ps1
@@ -86,7 +86,7 @@ def insert_user(user):
             INSERT INTO users (name)
             VALUES (?)
             ''',
-            # If there's a single argmuent,
+            # If there's a single argument,
             # do not forget to add a comma
             # to form a tuple
             (user['name'],)
@@ -244,17 +244,17 @@ pip install db-sqlite3
 pip3 freeze > requirements.txt
 ```
 
-Run migration to create database:
+Run the script to create the database:
 ```sh
 python main.py
 ```
 
-Run project!
+Run the project:
 ```sh
 flask --app main run
 ```
 
-Finally run some of the following requests from VSCodium/VSCode with [rest client extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) installed (you can create a file with **.http** extension).
+Finally, run some of the following requests from VSCodium/VSCode with the [REST Client extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) installed (you can create a file with the **.http** extension).
 
 ```http
 ###

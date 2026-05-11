@@ -15,10 +15,10 @@ toc: true
 
 ## Source control
 
-Working with big assets can be challenging, here are some options:
+Working with large assets can be challenging. Here are some options:
 
 * [Git Plugin](https://github.com/ProjectBorealis/UEGitPlugin). GitHub LFS is not free.
-* [PlasticSCM](https://www.plasticscm.com/). Includes free plan.
+* [PlasticSCM](https://www.plasticscm.com/). Includes a free plan.
 * [Helix Perforce](https://www.perforce.com/products/helix-core).
 
 ## Build max parallel actions
@@ -63,7 +63,7 @@ Building XXX actions with 30 processes...
 
 More info:
  * [Source](https://gpuopen.com/learn/threadripper-for-gamedev-ue4/)
- * [Oficial link](https://docs.unrealengine.com/5.1/en-US/build-configuration-for-unreal-engine/) see ParallelExecutor section.
+ * [Official link](https://docs.unrealengine.com/5.1/en-US/build-configuration-for-unreal-engine/) See the `ParallelExecutor` section.
 
 
 
@@ -118,13 +118,13 @@ Documentation: [Animation](https://docs.unrealengine.com/en-US/Engine/Animation/
 
 [Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/index.html)
 
-* To enable the debugger set a key binding in *Project Settings > Engine - Gameplay Debbuger > Activation Key*. If you're using a non default US keyboard or a keyboard with international bindings, it is recommended to set a plain key as Asterisk (*) or Minus (-), instead of something like an Apostrophe (') that won't be triggered by a single key-press on a US-International setup.
+* To enable the debugger, set a key binding in *Project Settings > Engine - Gameplay Debugger > Activation Key*. If you're using a non-default US keyboard or a keyboard with international bindings, it is recommended to set a plain key such as Asterisk (*) or Minus (-), instead of something like Apostrophe (') that will not be triggered by a single keypress on a US-International setup.
 
 ### Navmeshes
 
-* RecastNavMesh: update some navmesh settings on the scene. Also update-able from the project settings window searching for the option *Agent* (you can add support for multiple types of agents from here).
+* RecastNavMesh: update some navmesh settings in the scene. This is also configurable from the project settings window by searching for the option *Agent* (you can add support for multiple agent types from there).
 
-* Navmesh modifier volume: Adds additional information to the navmesh. Exmample: high cost areas, not allowed areas, etc.
+* Navmesh modifier volume: adds additional information to the navmesh. Example: high-cost areas, blocked areas, etc.
 
 * To disable Auto-updates: Editor Preferences -> Level Editor -> Misc -> Update Navigation Automatically.
 
@@ -157,16 +157,16 @@ Documentation: [Animation](https://docs.unrealengine.com/en-US/Engine/Animation/
 ### UE AI movement C++
 
 See this tutorial: https://www.vikram.codes/blog/ai/01-basic-navigation
-Improved and updated code to seek for a Random Reachable Location in the Navmesh:
+Improved and updated code to seek a random reachable location in the navmesh:
 
 * [MovementAIController.h](https://gist.github.com/dacanizares/6f47164e3d86d9fd6d19bd129d888695)
 * [MovementAIController.cpp](https://gist.github.com/dacanizares/5db9c59281a9c9049bf819acce7e29bc)
-* Don't forget to add the NavigationSystem and AIModule modules in your {project}.Build.cs. [More info](https://docs.unrealengine.com/en-US/Programming/Modules/Gameplay/index.html): it would be suffice to add "NavigationSystem" and "AIModule" strings to the PublicDependencyModuleNames.AddRange(...) parameters.
+* Don't forget to add the `NavigationSystem` and `AIModule` modules in your `{project}.Build.cs`. [More info](https://docs.unrealengine.com/en-US/Programming/Modules/Gameplay/index.html): it is enough to add `"NavigationSystem"` and `"AIModule"` to `PublicDependencyModuleNames.AddRange(...)`.
 
 
 ## How to do it?
 
-* **Convert Mouse Location to World Space**: Interact with 3D objects using players' mouse.
+* **Convert Mouse Location to World Space**: interact with 3D objects using the player's mouse.
   [See video](https://www.youtube.com/watch?v=b1_efR9hrT4)
 * **Reducing Packaged Game Size**: [See here](https://docs.unrealengine.com/en-US/Engine/Performance/ReducingPackageSize/index.html)
 * **More about Unreal C++**: [See UE C++ section]({{< relref "ue-cpp" >}})

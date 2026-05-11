@@ -1,7 +1,7 @@
 ---
 title: "Git"
-description: "Quick-starts and guidelines for .Net Core developemnt."
-lead: "Quick-starts and guidelines for .Net Core developemnt"
+description: "Quick starts and guidelines for Git development."
+lead: "Quick starts and guidelines for Git development."
 date: 2024-23-04
 lastmod: 2024-23-04
 draft: false
@@ -13,11 +13,11 @@ weight: 10
 toc: true
 ---
 
-> We always recommend to use a GUI tool on top of your *git* repo. Check GitHub Desktop for [Linux](https://equilaterus.com/wiki/docs/linux/desktop/#github-desktop) or [Windows/Mac](https://desktop.github.com/).
+> We always recommend using a GUI tool on top of your *git* repo. Check GitHub Desktop for [Linux](https://equilaterus.com/wiki/docs/linux/desktop/#github-desktop) or [Windows/Mac](https://desktop.github.com/).
 
 ## Git submodules
 
-If you need to share internal code and/or include other libraries (like ImGUI for C/C++) you may consider using [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+If you need to share internal code and/or include other libraries (like ImGui for C/C++), you may consider using [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 ```sh
 git submodule add {REPO_URL} {TARGET_FOLDER}
@@ -29,13 +29,13 @@ git submodule add https://github.com/ocornut/imgui libs/imgui/
 
 **Important:**
 
-* We recommend to use GitHub Desktop and add the submodule itself (after cloning the project) as a repo with an alias (in GitHub Desktop).
+* We recommend using GitHub Desktop and adding the submodule itself (after cloning the project) as a repo with an alias.
 
-* For the submodule we recommend using a branching strategy to easily go back and forth between versions. For example: you can create a branch for each stable version and have branches.
+* For the submodule, we recommend using a branching strategy to move easily between versions. For example, you can create a branch for each stable version.
 
 ## Git LFS
 
-To enable **Git LFS** on your project, first check your repository provider availability and costs. After that follow these steps:
+To enable **Git LFS** in your project, first check your repository provider's availability and costs. After that, follow these steps:
 
 1. Install:
    ```sh
@@ -72,7 +72,7 @@ To enable **Git LFS** on your project, first check your repository provider avai
 
 ### Git LFS Commands
 
-* After *staging* files to your Git Repo (using the ADD command) you can review which files are going to be uploaded to the Git LFS server suing this command:
+* After *staging* files in your Git repo, you can review which files are going to be uploaded to the Git LFS server using this command:
 
   ```
   git lfs status

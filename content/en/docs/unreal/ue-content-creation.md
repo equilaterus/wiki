@@ -1,5 +1,5 @@
 ---
-title: "UE Content creation"
+title: "UE Content Creation"
 description: "Unreal Engine content creation guidelines."
 lead: "Unreal Engine content creation guidelines."
 date: 2020-10-13T15:21:01+02:00
@@ -38,7 +38,7 @@ toc: true
 * More info and advanced scenarios: [Static Meshes Pipeline](https://docs.unrealengine.com/en-us/Engine/Content/FBX/StaticMeshes)
 
 ### Importing:
-* Check **Import Normals and Tangents** for a properly display of *Smooth Shaded Objects*. *UE4 will automatically show a warning when this setting is required but wasn't selected or when the FBX was generated without the Tangent Space*.
+* Check **Import Normals and Tangents** for proper display of *smooth shaded objects*. *UE4 will automatically show a warning when this setting is required but was not selected, or when the FBX was generated without tangent space*.
 
   ![UE import settings](https://equilaterus.github.io/wikilaterus/assets/img/ue4/ue4-import-fbx-blender.png)
 
@@ -60,10 +60,10 @@ toc: true
   mogrify -format png *.*
   ```
 
-### Alternative converting TGA to PNG (Windows)
+### Alternative: converting TGA to PNG (Windows)
 
 * Use this CLI tool: [tga2png](https://github.com/shusaura85/tga2png)
-* Open the TGA file, if it looks completely transparent, add a 1 as a final parameter otherwise do not use it. Example:
+* Open the TGA file. If it looks completely transparent, add a `1` as the final parameter; otherwise, do not use it. Example:
   * *targa2png.exe transparent.tga transparent.png 1*
   * *targa2png.exe normal.tga normal.png*
 * Use [Picsor](https://github.com/equilaterus/Picsor) to compress the file(s).

@@ -1,7 +1,7 @@
 ---
 title: ".Net Core"
-description: "Quick-starts and guidelines for .Net Core development."
-lead: "Quick-starts and guidelines for .Net Core development"
+description: "Quick starts and guidelines for .NET Core development."
+lead: "Quick starts and guidelines for .NET Core development."
 date: 2024-23-04
 lastmod: 2024-23-04
 draft: false
@@ -26,7 +26,7 @@ toc: true
 
 ## Quick guides/samples
 
-{{< alert icon="💡" text="Hotspots and cheatsheets for your common use cases." />}}
+{{< alert icon="💡" text="Hotspots and cheat sheets for common use cases." />}}
 
 
 
@@ -368,25 +368,25 @@ services.AddAutoMapper(typeof(Program))
    wsl --set-default-version 2
    ```
 
-3. Restart. Accept SSL certificates and Re-restart your machine.
+3. Restart, accept the SSL certificates, and restart your machine again.
 4. You're ready to go!
 
 * Problems? [Check this guide](https://learn.microsoft.com/en-us/windows/wsl/install-manual)
 
 ### Performance
 
-* A kind of - Practical intro to [Async APIs](https://www.carlrippon.com/scalable-and-performant-asp-net-core-web-apis-asynchronous-operations/)
+* A practical introduction to [Async APIs](https://www.carlrippon.com/scalable-and-performant-asp-net-core-web-apis-asynchronous-operations/)
   * Async discussions:
     * [Sync vs Async](https://caleblloyd.com/software/net-core-mvc-thread-pool-vs-async/)
     * [Async and IIS](https://blogs.msdn.microsoft.com/rickandy/2011/07/19/should-my-database-calls-be-asynchronous-part-ii/)
     * [My take on Async - experiment](http://www.tugberkugurlu.com/archive/my-take-on-task-base-asynchronous-programming-in-c-sharp-5-0-and-asp-net-mvc-web-applications)
 
-* Use DbContextPooling to improve the performance: [.Net Core 2.1](https://neelbhatt.com/2018/02/27/use-dbcontextpooling-to-improve-the-performance-net-core-2-1-feature/)
+* Use `DbContextPooling` to improve performance: [.NET Core 2.1](https://neelbhatt.com/2018/02/27/use-dbcontextpooling-to-improve-the-performance-net-core-2-1-feature/)
 
 
 ## Vortex
 
-Write elegant and testeable solutions on C# using a Monadic Framework. ASP Core joins the functional side!
+Write elegant and testable solutions in C# using a monadic framework. ASP Core joins the functional side!
 
 * [Vortex Repository](https://github.com/equilaterus/Vortex)
 * [Sample Apps](https://github.com/equilaterus/Vortex.Samples)

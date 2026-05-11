@@ -18,7 +18,7 @@ toc: true
 If **dnf update** gives you an error like this one:
 
 ```sh
-RPM:   1. Certificiate CC5F15147A36124D invalid: certificate is not alive
+RPM:   1. Certificate CC5F15147A36124D invalid: certificate is not alive
 RPM:       because: The primary key is not live
 RPM:       because: Expired on 2022-05-15T11:33:53Z
 RPM:   2. Key CC5F15147A36124D invalid: key is not alive
@@ -28,7 +28,7 @@ RPM: error: Verifying a signature using certificate E9B542ED839913B776AF2AA8CC5F
 com>).
 ```
 
-1. Find key for the repo that is not working (stable OBS Project in this case):
+1. Find the key for the repo that is not working (stable OBS Project in this case):
 
 ```sh
 # Command
@@ -59,7 +59,7 @@ sudo dnf clean all
 
 ## VLC
 
-# VLC error: Could not decode h264 fedora
+## VLC error: Could not decode H.264 on Fedora
 
 Run the following command:
 
